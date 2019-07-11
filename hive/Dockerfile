@@ -16,6 +16,8 @@ COPY hive-site.xml /opt/hive/conf/
 
 COPY init.sh /opt/
 
+COPY start.sh /opt/
+
 ENV HIVE_HOME=/opt/hive
 ENV HIVE_CONF_DIR=$HIVE_HOME/conf
 
@@ -23,3 +25,4 @@ ENV PATH ${HIVE_HOME}/bin:$PATH
 
 RUN chmod +x /opt/init.sh
 
+RUN chmod +x /opt/start.sh
