@@ -1,0 +1,62 @@
+version: '3'
+services:
+  federation-master1:
+    image: hd-container:1.0
+    hostname: hadoop-master1
+    extra_hosts:
+      - "hadoop-slave1:172.18.0.11"
+      - "hadoop-slave2:172.18.0.12"
+    networks:
+      hd-net:
+        ipv4_address: 172.18.0.10
+    volumes:
+      - d:/workspace/bigdata-docker/run-shell/hadoop-by-ssh/hadoop-2.7.7:/opt/hadoop
+      - d:/workspace/bigdata-docker/run-shell/hadoop-by-ssh/etc/hadoop:/etc/hadoop
+      - d:/workspace/bigdata-docker/run-shell/hadoop-by-ssh/script:/opt/script
+    environment:
+       HADOOP_HOME: /opt/hadoop
+       HADOOP_CONF_DIR: /etc/hadoop
+       HADOOP_LOG_DIR: /var/log/hadoop
+       YARN_LOG_DIR: /var/log/yarn
+  federation-slave1:
+    image: hd-container:1.0
+    hostname: hadoop-slave1
+    extra_hosts:
+      - "hadoop-master1:172.18.0.10"
+      - "hadoop-slave2:172.18.0.12"
+    networks:
+      hd-net:
+        ipv4_address: 172.18.0.11
+    volumes:
+      - d:/workspace/bigdata-docker/run-shell/hadoop-by-ssh/hadoop-2.7.7:/opt/hadoop
+      - d:/workspace/bigdata-docker/run-shell/hadoop-by-ssh/etc/hadoop:/etc/hadoop
+      - d:/workspace/bigdata-docker/run-shell/hadoop-by-ssh/script:/opt/script
+    environment:
+       HADOOP_HOME: /opt/hadoop
+       HADOOP_CONF_DIR: /etc/hadoop
+       HADOOP_LOG_DIR: /var/log/hadoop
+       YARN_LOG_DIR: /var/log/yarn
+  federation-slave2:
+    image: hd-container:1.0
+    hostname: hadoop-slave2
+    extra_hosts:
+      - "hadoop-master1:172.18.0.10"
+      - "hadoop-slave1:172.18.0.11"
+    networks:
+      hd-net:
+        ipv4_address: 172.18.0.12
+    volumes:
+      - d:/workspace/bigdata-docker/run-shell/hadoop-by-ssh/hadoop-2.7.7:/opt/hadoop
+      - d:/workspace/bigdata-docker/run-shell/hadoop-by-ssh/etc/hadoop:/etc/hadoop
+      - d:/workspace/bigdata-docker/run-shell/hadoop-by-ssh/script:/opt/script
+    environment:
+       HADOOP_HOME: /opt/hadoop
+       HADOOP_CONF_DIR: /etc/hadoop
+       HADOOP_LOG_DIR: /var/log/hadoop
+       YARN_LOG_DIR: /var/log/yarn
+networks:
+  hd-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16

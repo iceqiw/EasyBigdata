@@ -2,21 +2,6 @@ version: '3'
 services:
   federation-master:
     image: hd-container:1.0
-    hostname: hadoop-master1
-    networks:
-      hd-net:
-        ipv4_address: 172.18.0.10
-    volumes:
-      - d:/workspace/bigdata-docker/run-shell/hadoop-by-ssh/hadoop-2.7.7:/opt/hadoop
-      - d:/workspace/bigdata-docker/run-shell/hadoop-by-ssh/etc/hadoop:/etc/hadoop
-      - d:/workspace/bigdata-docker/run-shell/hadoop-by-ssh/script:/opt/script
-    environment:
-       HADOOP_HOME: /opt/hadoop
-       HADOOP_CONF_DIR: /etc/hadoop
-       HADOOP_LOG_DIR: /var/log/hadoop
-       YARN_LOG_DIR: /var/log/yarn
-  federation-master2:
-    image: hd-container:1.0
     hostname: hadoop-master2
     networks:
       hd-net:

@@ -23,3 +23,9 @@ docker run -it --name hadoop0 --hostname hadoop-1 -p 50070:50070 -p 8088:8088 -p
 docker run -it --name hadoop0 --hostname hadoop-1 --network mynetwork --ip 172.18.0.3 centos-hive /bin/bash
 ```
 
+```bash
+#启动dockers
+docker-compose -f docker-compose-hdfs.yml up -d
+
+```
+
