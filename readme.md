@@ -43,15 +43,12 @@ sh /opt/script/start-components.sh master
 # 3 启动slave
 sh /opt/script/start-components.sh slave
 # 4 初始化hive
-groupadd hive
-useradd -g hive hive
 hadoop fs -mkdir -p /user/hive/warehouse
 hadoop fs -chown hive:hive /user/hive
 hadoop fs -chown hive:hive /user/hive/warehouse
 schematool -dbType derby -initSchema
 
 # 5启动hiveserver2
-su hive
 nohup hiveserver2 &
 ```
 
