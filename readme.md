@@ -1,5 +1,20 @@
-##
-hadoop 命令
+# docker 镜像构建
+
+```
+docker build -t hd-container:1.0 .
+```
+
+## 构建Hadoop运行环境
+
+```
+# win
+docker-compose -f win-docker-compose-hive.yml up -d
+
+#mac
+docker-compose -f mac-docker-compose-hive.yml up -d
+```
+
+## hadoop 启动命令
 
 `hdfs namenode -format`
 
@@ -13,19 +28,29 @@ hadoop 命令
 
 `hadoop fs -mkdir -p /user/hive/warehouse`
 
-#### docker 运行命令
+## hadoop 启动命令
 
-```bash
+`./hiveserver2 &`
 
-docker run -it --name hadoop0 --hostname hadoop-1 -p 50070:50070 -p 8088:8088 -p 8000:8000 -p 10000:10000 centos-hive /bin/bash
+## hadoop 集群运行命令
 
-#windows
-docker run -it --name hadoop0 --hostname hadoop-1 --network mynetwork --ip 172.18.0.3 centos-hive /bin/bash
+```
+# 1 初始化环境 
+source /opt/script/bigdata_env.sh
+# 2 启动master
+hdfs namenode -format
+sh /opt/script/start-components.sh master
+# 3 启动slave
+sh /opt/script/start-components.sh slave
+# 4 初始化hive
+hadoop fs -mkdir -p /user/hive/warehouse
+hadoop fs -chown hive:hive /user/hive
+# 5启动hiveserver2
 ```
 
-```bash
-#启动dockers
-docker-compose -f docker-compose-hdfs.yml up -d
+## hive server2 连接
 
+```
+beeline -u jdbc:hive2://localhost:10000/default -n scott -p sssss
 ```
 

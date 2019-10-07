@@ -1,6 +1,5 @@
-hive/apache-hive-1.2.3-SNAPSHOT-bin.tar.gz
-jdk/jdk-8u211-linux-x64.tar.gz
-hadoop/hadoop-2.7.7.tar.gz
-run-shell/hadoop-by-ssh/apache-hive-1.2.3
-run-shell/hadoop-by-ssh/hadoop-2.7.7
-run-shell/hadoop-by-ssh/etc*
+*.tar.gz
+build-env/apache-hive-*
+build-env/hadoop-*
+etc*
+.DS_Store

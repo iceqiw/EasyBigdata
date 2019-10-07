@@ -2,15 +2,28 @@
 # Author        qiwei
 
 # build a new image with basic  centos
-FROM centos-jdk
+FROM centos
 # who is the author
 MAINTAINER qiwei
 
+# add jdk
+RUN mkdir /usr/local/java
+ADD jdk-8u211-linux-x64.tar.gz /usr/local/java/
+# make a symbol link
+RUN ln -s /usr/local/java/jdk1.8.0_211 /usr/local/java/jdk
 
+# set environment variables
+ENV JAVA_HOME /usr/local/java/jdk
+ENV JRE_HOME ${JAVA_HOME}/jre
+ENV CLASSPATH .:${JAVA_HOME}/lib:${JRE_HOME}/lib
+ENV PATH ${JAVA_HOME}/bin:$PATH
+
+# hadoop env
 RUN mkdir -p /opt/data/hadoop/hdfs/name
 RUN mkdir -p /opt/data/hadoop/hdfs/data
 RUN mkdir -p /opt/data/hadoop/tmp
 RUN mkdir -p /var/log/hadoop
+RUN mkdir -p /var/log/yarn
 RUN mkdir -p /var/log/hive
 
 # install openssh
