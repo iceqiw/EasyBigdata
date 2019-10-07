@@ -1,5 +1,5 @@
 *.tar.gz
-build-env/apache-hive-*
-build-env/hadoop-*
+build-env/hive*
+build-env/hadoop*
 etc*
 .DS_Store

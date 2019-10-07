@@ -10,10 +10,10 @@ services:
       hd-net:
         ipv4_address: 172.18.0.10
     volumes:
-      - d:/workspace/bigdata-docker/build-env/hadoop-2.7.7:/opt/hadoop
+      - d:/workspace/bigdata-docker/build-env/hadoop:/opt/hadoop
       - d:/workspace/bigdata-docker/build-env/etc/hadoop:/etc/hadoop
       - d:/workspace/bigdata-docker/build-env/script:/opt/script
-      - d:/workspace/bigdata-docker/build-env/apache-hive-1.2.2:/opt/hive
+      - d:/workspace/bigdata-docker/build-env/hive:/opt/hive
       - d:/workspace/bigdata-docker/build-env/etc/hive:/etc/hive
     environment:
        HADOOP_HOME: /opt/hadoop
@@ -32,7 +32,7 @@ services:
       hd-net:
         ipv4_address: 172.18.0.11
     volumes:
-      - d:/workspace/bigdata-docker/build-env/hadoop-2.7.7:/opt/hadoop
+      - d:/workspace/bigdata-docker/build-env/hadoop:/opt/hadoop
       - d:/workspace/bigdata-docker/build-env/etc/hadoop:/etc/hadoop
       - d:/workspace/bigdata-docker/build-env/script:/opt/script
     environment:
@@ -50,7 +50,7 @@ services:
       hd-net:
         ipv4_address: 172.18.0.12
     volumes:
-      - d:/workspace/bigdata-docker/build-env/hadoop-2.7.7:/opt/hadoop
+      - d:/workspace/bigdata-docker/build-env/hadoop:/opt/hadoop
       - d:/workspace/bigdata-docker/build-env/etc/hadoop:/etc/hadoop
       - d:/workspace/bigdata-docker/build-env/script:/opt/script
     environment:
