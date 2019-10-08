@@ -20,6 +20,7 @@ services:
        HADOOP_CONF_DIR: /etc/hadoop
        HADOOP_LOG_DIR: /var/log/hadoop
        YARN_LOG_DIR: /var/log/yarn
+       YARN_CONF_DIR: /etc/hadoop
        HIVE_HOME: /opt/hive
        HIVE_CONF_DIR: /etc/hive
   federation-slave1:
@@ -39,6 +40,7 @@ services:
        HADOOP_HOME: /opt/hadoop
        HADOOP_CONF_DIR: /etc/hadoop
        HADOOP_LOG_DIR: /var/log/hadoop
+       YARN_CONF_DIR: /etc/hadoop
        YARN_LOG_DIR: /var/log/yarn
   federation-slave2:
     image: hd-container:1.0
@@ -57,6 +59,7 @@ services:
        HADOOP_HOME: /opt/hadoop
        HADOOP_CONF_DIR: /etc/hadoop
        HADOOP_LOG_DIR: /var/log/hadoop
+       YARN_CONF_DIR: /etc/hadoop
        YARN_LOG_DIR: /var/log/yarn
 networks:
   hd-net:
