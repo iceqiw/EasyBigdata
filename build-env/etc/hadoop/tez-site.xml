@@ -7,6 +7,6 @@
 <configuration>
     <property>
         <name>tez.lib.uris</name>
-        <value>hdfs://hadoop-master1:9000/apps/tez.tar.gz</value>
+        <value>hdfs://hadoop-master1:9000/apps/tez,hdfs://hadoop-master1:9000/apps/tez/lib</value>
     </property>
 </configuration>
