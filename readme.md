@@ -62,6 +62,18 @@ beeline -u jdbc:hive2://localhost:10000/default -n hive
 
 ```sql
 
-create table test(id string, name string, age int);
-
+create table test(id string, name string, age int)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+STORED AS TEXTFILE;
+insert into table test values('1','q1',33);
+LOAD DATA INPATH '/tmp/test.txt' INTO TABLE test;
 ```
+
+
+## mark
+
+- hive on hadoop 3 feature :https://mathsigit.github.io/blog_page/2017/11/16/hole-of-submitting-mr-of-hadoop300RC0/ 
+
+### 善意提醒提高docker container 的内存大小，被坑了好久。
+
+iptables -t nat -A  DOCKER -p tcp --dport 8042 -j DNAT --to-destination 172.18.0.10:8042

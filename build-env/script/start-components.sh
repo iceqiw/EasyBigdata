@@ -5,13 +5,13 @@ usage="Usage: hadoop-daemon.sh [--config <conf-dir>] [--hosts hostlistfile] [--s
 command=$1
 shift
 master_fun(){
-  hadoop-daemon.sh start namenode
-  yarn-daemon.sh start resourcemanager
+  hdfs --daemon start namenode
+  yarn --daemon start resourcemanager
 }
 
 slave_fun(){
-  hadoop-daemon.sh start datanode
-  yarn-daemon.sh start nodemanager
+  hdfs --daemon start datanode
+  yarn --daemon start nodemanager
 }
 
 

@@ -3,6 +3,9 @@ services:
   federation-master1:
     image: hd-container:1.0
     hostname: hadoop-master1
+    ports:
+      - 8088:8088
+      - 8042:8042
     extra_hosts:
       - "hadoop-slave1:172.18.0.11"
       - "hadoop-slave2:172.18.0.12"
@@ -15,6 +18,7 @@ services:
       - ~/workspace/docker/bigdata-docker/build-env/script:/opt/script
       - ~/workspace/docker/bigdata-docker/build-env/hive:/opt/hive
       - ~/workspace/docker/bigdata-docker/build-env/etc/hive:/etc/hive
+      - ~/workspace/docker/bigdata-docker/build-env/tez:/opt/tez
     environment:
        HADOOP_HOME: /opt/hadoop
        HADOOP_CONF_DIR: /etc/hadoop
@@ -23,9 +27,12 @@ services:
        YARN_CONF_DIR: /etc/hadoop
        HIVE_HOME: /opt/hive
        HIVE_CONF_DIR: /etc/hive
+       HADOOP_MAPRED_HOME: /opt/hadoop
   federation-slave1:
     image: hd-container:1.0
     hostname: hadoop-slave1
+    ports:
+      - 8043:8042
     extra_hosts:
       - "hadoop-master1:172.18.0.10"
       - "hadoop-slave2:172.18.0.12"
@@ -42,9 +49,12 @@ services:
        HADOOP_LOG_DIR: /var/log/hadoop
        YARN_CONF_DIR: /etc/hadoop
        YARN_LOG_DIR: /var/log/yarn
+       HADOOP_MAPRED_HOME: /opt/hadoop
   federation-slave2:
     image: hd-container:1.0
     hostname: hadoop-slave2
+    ports:
+      - 8044:8042
     extra_hosts:
       - "hadoop-master1:172.18.0.10"
       - "hadoop-slave1:172.18.0.11"
@@ -61,6 +71,7 @@ services:
        HADOOP_LOG_DIR: /var/log/hadoop
        YARN_CONF_DIR: /etc/hadoop
        YARN_LOG_DIR: /var/log/yarn
+       HADOOP_MAPRED_HOME: /opt/hadoop
 networks:
   hd-net:
     driver: bridge
