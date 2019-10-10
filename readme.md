@@ -28,7 +28,7 @@ docker-compose -f mac-docker-compose-hive.yml up -d
 
 `hadoop fs -mkdir -p /user/hive/warehouse`
 
-## hadoop 启动命令
+## hive 启动命令
 
 `nohup hiveserver2 &`
 
@@ -51,8 +51,6 @@ hadoop fs -chown hive:hive /user/hive
 hadoop fs -chown hive:hive /user/hive/warehouse
 schematool -dbType derby -initSchema
 
-# 5启动hiveserver2
-nohup hiveserver2 &
 ```
 
 ## hive server2 连接
@@ -78,5 +76,3 @@ LOAD DATA INPATH '/tmp/test.txt' INTO TABLE test;
 - hive on hadoop 3 feature :https://mathsigit.github.io/blog_page/2017/11/16/hole-of-submitting-mr-of-hadoop300RC0/ 
 
 ### 善意提醒提高docker container 的内存大小，被坑了好久。
-
-iptables -t nat -A  DOCKER -p tcp --dport 8042 -j DNAT --to-destination 172.18.0.10:8042
