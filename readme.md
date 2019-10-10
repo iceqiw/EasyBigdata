@@ -30,7 +30,10 @@ docker-compose -f mac-docker-compose-hive.yml up -d
 
 ## hadoop 启动命令
 
-`./hiveserver2 &`
+`nohup hiveserver2 &`
+
+`nohup hive --service metastore &
+`
 
 ## hadoop 集群运行命令
 

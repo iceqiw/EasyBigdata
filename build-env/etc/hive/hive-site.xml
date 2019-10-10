@@ -12,6 +12,16 @@
   </property>
 
   <property>
+    <name>hive.metastore.local</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>hive.metastore.uris</name>
+    <value>thrift://hadoop-master1:9083</value>
+  </property>
+
+  <property>
     <name>hive.metastore.warehouse.dir</name>
     <value>/user/hive/warehouse</value>
   </property>

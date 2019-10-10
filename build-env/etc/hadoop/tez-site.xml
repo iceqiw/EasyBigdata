@@ -9,4 +9,8 @@
         <name>tez.lib.uris</name>
         <value>hdfs://hadoop-master1:9000/apps/tez,hdfs://hadoop-master1:9000/apps/tez/lib</value>
     </property>
+    <property>
+        <name>tez.use.cluster.hadoop-libs</name>
+        <value>true</value>
+    </property>
 </configuration>
