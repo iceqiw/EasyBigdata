@@ -13,12 +13,11 @@ services:
       hd-net:
         ipv4_address: 172.18.0.10
     volumes:
-      - ~/workspace/docker/bigdata-docker/build-env/hadoop:/opt/hadoop
-      - ~/workspace/docker/bigdata-docker/build-env/etc/hadoop:/etc/hadoop
       - ~/workspace/docker/bigdata-docker/build-env/script:/opt/script
-      - ~/workspace/docker/bigdata-docker/build-env/hive:/opt/hive
-      - ~/workspace/docker/bigdata-docker/build-env/etc/hive:/etc/hive
-      - ~/workspace/docker/bigdata-docker/build-env/tez:/opt/tez
+      - ~/Dev/big-data/hadoop-3.1.2:/opt/hadoop
+      - ~/Dev/big-data/etc/hadoop:/etc/hadoop
+      - ~/Dev/big-data/apache-hive-3.1.2-bin:/opt/hive
+      - ~/Dev/big-data/etc/hive:/etc/hive
     environment:
        HADOOP_HOME: /opt/hadoop
        HADOOP_CONF_DIR: /etc/hadoop
@@ -27,7 +26,6 @@ services:
        YARN_CONF_DIR: /etc/hadoop
        HIVE_HOME: /opt/hive
        HIVE_CONF_DIR: /etc/hive
-       HADOOP_MAPRED_HOME: /opt/hadoop
   federation-slave1:
     image: hd-container:1.0
     hostname: hadoop-slave1
@@ -40,16 +38,15 @@ services:
       hd-net:
         ipv4_address: 172.18.0.11
     volumes:
-      - ~/workspace/docker/bigdata-docker/build-env/hadoop:/opt/hadoop
-      - ~/workspace/docker/bigdata-docker/build-env/etc/hadoop:/etc/hadoop
       - ~/workspace/docker/bigdata-docker/build-env/script:/opt/script
+      - ~/Dev/big-data/hadoop-3.1.2:/opt/hadoop
+      - ~/Dev/big-data/etc/hadoop:/etc/hadoop
     environment:
        HADOOP_HOME: /opt/hadoop
        HADOOP_CONF_DIR: /etc/hadoop
        HADOOP_LOG_DIR: /var/log/hadoop
        YARN_CONF_DIR: /etc/hadoop
        YARN_LOG_DIR: /var/log/yarn
-       HADOOP_MAPRED_HOME: /opt/hadoop
   federation-slave2:
     image: hd-container:1.0
     hostname: hadoop-slave2
@@ -62,16 +59,15 @@ services:
       hd-net:
         ipv4_address: 172.18.0.12
     volumes:
-      - ~/workspace/docker/bigdata-docker/build-env/hadoop:/opt/hadoop
-      - ~/workspace/docker/bigdata-docker/build-env/etc/hadoop:/etc/hadoop
       - ~/workspace/docker/bigdata-docker/build-env/script:/opt/script
+      - ~/Dev/big-data/hadoop-3.1.2:/opt/hadoop
+      - ~/Dev/big-data/etc/hadoop:/etc/hadoop
     environment:
        HADOOP_HOME: /opt/hadoop
        HADOOP_CONF_DIR: /etc/hadoop
        HADOOP_LOG_DIR: /var/log/hadoop
        YARN_CONF_DIR: /etc/hadoop
        YARN_LOG_DIR: /var/log/yarn
-       HADOOP_MAPRED_HOME: /opt/hadoop
 networks:
   hd-net:
     driver: bridge

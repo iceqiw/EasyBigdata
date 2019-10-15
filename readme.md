@@ -14,7 +14,7 @@ docker-compose -f win-docker-compose-hive.yml up -d
 docker-compose -f mac-docker-compose-hive.yml up -d
 ```
 
-## hadoop 启动命令
+## hadoop 常用命令
 
 `hdfs namenode -format`
 
@@ -51,22 +51,33 @@ hadoop fs -chown hive:hive /user/hive
 hadoop fs -chown hive:hive /user/hive/warehouse
 schematool -dbType derby -initSchema
 
+# 5 启动hive
+nohup hiveserver2 &
+
+nohup hive --service metastore &
+
 ```
 
 ## hive server2 连接
 
 ```
 beeline -u jdbc:hive2://localhost:10000/default -n hive
+
 ```
 
 ## Test
 
-```sql
-
+```
 create table test(id string, name string, age int)
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 STORED AS TEXTFILE;
+```
+
+```
 insert into table test values('1','q1',33);
+```
+
+```
 LOAD DATA INPATH '/tmp/test.txt' INTO TABLE test;
 ```
 
