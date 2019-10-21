@@ -87,3 +87,13 @@ LOAD DATA INPATH '/tmp/test.txt' INTO TABLE test;
 - hive on hadoop 3 feature :https://mathsigit.github.io/blog_page/2017/11/16/hole-of-submitting-mr-of-hadoop300RC0/ 
 
 ### 善意提醒提高docker container 的内存大小，被坑了好久。
+
+* 构建镜像
+    * 下载jdk
+    * 修改hd-container配置dockerfile文件,将jdk修改为对应版本
+    * 运行构建命令 docker build -t hd-container:1.0 .
+* 构建集群容器
+    * 下载hadoop tar.gz包,hive tar.gz包
+    * 修改 docker-compose yml文件为对应版本,修改对应的配置文件存放路径
+    * 启动集群 docker-compose -f mac-docker-compose-hive.yml up -d
+    * 测试容器docker exec -it c46d734303b9 /bin/bash
