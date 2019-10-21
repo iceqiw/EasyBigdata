@@ -18,13 +18,13 @@ docker-compose -f mac-docker-compose-hive.yml up -d
 
 `hdfs namenode -format`
 
-`hadoop-daemon.sh start namenode`
+`hdfs --daemon start namenode`
 
-`hadoop-daemon.sh start datanode`
+`hdfs --daemon start datanode`
 
-`yarn-daemon.sh start resourcemanager`
+`yarn --daemo start resourcemanager`
 
-`yarn-daemon.sh start nodemanager`
+`yarn --daemo start nodemanager`
 
 `hadoop fs -mkdir -p /user/hive/warehouse`
 
