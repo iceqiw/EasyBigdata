@@ -22,9 +22,9 @@ docker-compose -f mac-docker-compose-hive.yml up -d
 
 `hdfs --daemon start datanode`
 
-`yarn --daemo start resourcemanager`
+`yarn --daemon start resourcemanager`
 
-`yarn --daemo start nodemanager`
+`yarn --daemon start nodemanager`
 
 `hadoop fs -mkdir -p /user/hive/warehouse`
 
@@ -81,6 +81,21 @@ insert into table test values('1','q1',33);
 LOAD DATA INPATH '/tmp/test.txt' INTO TABLE test;
 ```
 
+2/ 分区关键字 PARTITIONED BY
+```sql
+create table t_4(ip string,url string,staylong int)
+partitioned by (day string)
+row format delimited
+fields terminated by ',';
+
+```
+
+
+导入数据到不同的分区目录：
+```bash
+load data local inpath '/root/weblog.1' into table t_4 partition(day='2017-04-08');
+load data local inpath '/root/weblog.2' into table t_4 partition(day='2017-04-09');
+```
 
 ## mark
 
