@@ -70,6 +70,20 @@ services:
        HADOOP_LOG_DIR: /var/log/hadoop
        YARN_CONF_DIR: /etc/hadoop
        YARN_LOG_DIR: /var/log/yarn
+  zeppelin:
+    image: hd-container:1.0
+    hostname: zeppelin
+    ports:
+      - 18080:18080
+    extra_hosts:
+      - "hadoop-master1:172.18.0.10"
+      - "hadoop-slave1:172.18.0.11"
+      - "hadoop-slave1:172.18.0.12"
+    networks:
+      hd-net:
+        ipv4_address: 172.18.0.13
+    volumes:
+      - ~/Dev/big-data/zeppelin-0.8.2-bin-netinst:/opt/zeppelin
 networks:
   hd-net:
     driver: bridge
