@@ -1,6 +1,6 @@
 version: '3'
 services:
-  federation-master1:
+  hadoop-master1:
     image: hd-container:1.0
     hostname: hadoop-master1
     ports:
@@ -15,20 +15,20 @@ services:
       hd-net:
         ipv4_address: 172.18.0.10
     volumes:
-      - ~/workspace/docker/bigdata-docker/build-env/script:/opt/script
-      - ~/workspace/docker/bigdata-docker/build-env/etc/hadoop:/etc/hadoop
-      - ~/workspace/docker/bigdata-docker/build-env/etc/hive:/etc/hive
       - ~/Dev/big-data/hadoop-3.1.2:/opt/hadoop
+      - ./etc/hadoop:/etc/hadoop
       - ~/Dev/big-data/apache-hive-3.1.2-bin:/opt/hive
+      - ./etc/hive:/etc/hive
+      - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
     environment:
-       HADOOP_HOME: /opt/hadoop
-       HADOOP_CONF_DIR: /etc/hadoop
-       HADOOP_LOG_DIR: /var/log/hadoop
-       YARN_LOG_DIR: /var/log/yarn
-       YARN_CONF_DIR: /etc/hadoop
-       HIVE_HOME: /opt/hive
-       HIVE_CONF_DIR: /etc/hive
-  federation-slave1:
+      HADOOP_HOME: /opt/hadoop
+      HADOOP_CONF_DIR: /etc/hadoop
+      HADOOP_LOG_DIR: /var/log/hadoop
+      YARN_LOG_DIR: /var/log/yarn
+      YARN_CONF_DIR: /etc/hadoop
+      HIVE_HOME: /opt/hive
+      HIVE_CONF_DIR: /etc/hive
+  hadoop-slave1:
     image: hd-container:1.0
     hostname: hadoop-slave1
     ports:
@@ -40,16 +40,16 @@ services:
       hd-net:
         ipv4_address: 172.18.0.11
     volumes:
-      - ~/workspace/docker/bigdata-docker/build-env/script:/opt/script
-      - ~/workspace/docker/bigdata-docker/build-env/etc/hadoop:/etc/hadoop
       - ~/Dev/big-data/hadoop-3.1.2:/opt/hadoop
+      - ./etc/hadoop:/etc/hadoop
+      - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
     environment:
-       HADOOP_HOME: /opt/hadoop
-       HADOOP_CONF_DIR: /etc/hadoop
-       HADOOP_LOG_DIR: /var/log/hadoop
-       YARN_CONF_DIR: /etc/hadoop
-       YARN_LOG_DIR: /var/log/yarn
-  federation-slave2:
+      HADOOP_HOME: /opt/hadoop
+      HADOOP_CONF_DIR: /etc/hadoop
+      HADOOP_LOG_DIR: /var/log/hadoop
+      YARN_CONF_DIR: /etc/hadoop
+      YARN_LOG_DIR: /var/log/yarn
+  hadoop-slave2:
     image: hd-container:1.0
     hostname: hadoop-slave2
     ports:
@@ -61,15 +61,15 @@ services:
       hd-net:
         ipv4_address: 172.18.0.12
     volumes:
-      - ~/workspace/docker/bigdata-docker/build-env/script:/opt/script
-      - ~/workspace/docker/bigdata-docker/build-env/etc/hadoop:/etc/hadoop
       - ~/Dev/big-data/hadoop-3.1.2:/opt/hadoop
+      - ./etc/hadoop:/etc/hadoop
+      - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
     environment:
-       HADOOP_HOME: /opt/hadoop
-       HADOOP_CONF_DIR: /etc/hadoop
-       HADOOP_LOG_DIR: /var/log/hadoop
-       YARN_CONF_DIR: /etc/hadoop
-       YARN_LOG_DIR: /var/log/yarn
+      HADOOP_HOME: /opt/hadoop
+      HADOOP_CONF_DIR: /etc/hadoop
+      HADOOP_LOG_DIR: /var/log/hadoop
+      YARN_CONF_DIR: /etc/hadoop
+      YARN_LOG_DIR: /var/log/yarn
   zeppelin:
     image: hd-container:1.0
     hostname: zeppelin

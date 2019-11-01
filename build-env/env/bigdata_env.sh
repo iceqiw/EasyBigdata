@@ -8,4 +8,10 @@ if [[ -n $HIVE_HOME ]]; then
   export PATH=$HIVE_HOME/bin:$PATH
 fi
 
-export PATH=/opt/script:$PATH
+if [[ -n $ZOO_HOME ]]; then
+  export PATH=$ZOO_HOME/bin:$PATH
+fi
+
+if [[ -n $KAFKA_HOME ]]; then
+  export PATH=$KAFKA_HOME/bin:$PATH
+fi
