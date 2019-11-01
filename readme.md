@@ -1,16 +1,12 @@
-# docker 镜像构建
+# docker 镜像构建命令e.g
 
 ```
 docker build -t hd-container:1.0 .
 ```
 
-## 构建Hadoop运行环境
+## 构建Hadoop运行环境命令e.g
 
 ```
-# win
-docker-compose -f win-docker-compose-hive.yml up -d
-
-#mac
 docker-compose -f mac-docker-compose-hive.yml up -d
 ```
 
@@ -38,24 +34,25 @@ docker-compose -f mac-docker-compose-hive.yml up -d
 ## hadoop 集群运行命令
 
 ```
-# 1 初始化环境 
-source /opt/script/bigdata_env.sh
-# 2 启动master
+1.格式化namenode
 hdfs namenode -format
-sh /opt/script/start-components.sh master
-# 3 启动slave
-sh /opt/script/start-components.sh slave
-# 4 初始化hive
+
+2.启动namenode（主节点）
+
+3.启动datanode （所有节点）
+
+4.初始化hive warehouse目录
 hadoop fs -mkdir -p /user/hive/warehouse
 hadoop fs -chown hive:hive /user/hive
 hadoop fs -chown hive:hive /user/hive/warehouse
+
+5.初始化metastore
 schematool -dbType derby -initSchema
 
 # 5 启动hive
-nohup hiveserver2 &
-
 nohup hive --service metastore &
 
+nohup hiveserver2 &
 ```
 
 ## hive server2 连接
