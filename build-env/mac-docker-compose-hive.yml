@@ -9,9 +9,9 @@ services:
       - 10000:10000
       - 50070:50070
     volumes:
-      - ~/Dev/big-data/hadoop-3.1.2:/opt/bigdata/hadoop
+      - ~/bigdata/hadoop-3.1.2:/opt/bigdata/hadoop
       - ./etc/hadoop:/etc/hadoop
-      - ~/Dev/big-data/apache-hive-3.1.2-bin:/opt/bigdata/hive
+      - ~/big-data/apache-hive-3.1.2-bin:/opt/bigdata/hive
       - ./etc/hive:/etc/hive
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
   hadoop-slave1:
@@ -20,7 +20,7 @@ services:
     ports:
       - 8043:8042
     volumes:
-      - ~/Dev/big-data/hadoop-3.1.2:/opt/bigdata/hadoop
+      - ~/bigdata/hadoop-3.1.2:/opt/bigdata/hadoop
       - ./etc/hadoop:/etc/hadoop
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
   hadoop-slave2:
@@ -29,7 +29,7 @@ services:
     ports:
       - 8044:8042
     volumes:
-      - ~/Dev/big-data/hadoop-3.1.2:/opt/bigdata/hadoop
+      - ~/bigdata/hadoop-3.1.2:/opt/bigdata/hadoop
       - ./etc/hadoop:/etc/hadoop
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
   zeppelin:
@@ -38,4 +38,4 @@ services:
     ports:
       - 18080:18080
     volumes:
-      - ~/Dev/big-data/zeppelin-0.8.2-bin-netinst:/opt/bigdata/zeppelin
+      - ~/bigdata/zeppelin-0.8.2-bin-netinst:/opt/bigdata/zeppelin
