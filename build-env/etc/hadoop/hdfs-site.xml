@@ -1,12 +1,12 @@
 <configuration>
     <property>
         <name>dfs.name.dir</name>
-        <value>/opt/data/hadoop/hdfs/name</value>
+        <value>$BIGDATAHOME/data/hadoop/hdfs/name</value>
     </property>
 
     <property>
         <name>dfs.data.dir</name>
-        <value>/opt/data/hadoop/hdfs/data</value>
+        <value>$BIGDATAHOME/data/hadoop/hdfs/data</value>
     </property>
 
     <property>

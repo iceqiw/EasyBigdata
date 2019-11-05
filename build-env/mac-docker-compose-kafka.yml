@@ -7,15 +7,11 @@ services:
       - 2181:2181
       - 9092:9092
     volumes:
-      - ~/Dev/big-data/apache-zookeeper-3.5.6-bin:/opt/zookeeper
+      - ~/Dev/big-data/apache-zookeeper-3.5.6-bin:/opt/bigdata/zookeeper
       - ./etc/zookeeper:/etc/zookeeper
-      - ~/Dev/big-data/kafka_2.12-2.3.1:/opt/kafka
+      - ~/Dev/big-data/kafka_2.12-2.3.1:/opt/bigdata/kafka
       - ./etc/kafka:/etc/kafka
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
-    environment:
-      ZOO_HOME: "/opt/zookeeper"
-      ZOOCFGDIR: "/etc/zookeeper"
-      KAFKA_HOME: "/opt/kafka"
   hd-2:
     image: hd-container-kafka:1.0
     hostname: hd-2
@@ -23,15 +19,11 @@ services:
       - 2182:2181
       - 9093:9092
     volumes:
-      - ~/Dev/big-data/apache-zookeeper-3.5.6-bin:/opt/zookeeper
+      - ~/Dev/big-data/apache-zookeeper-3.5.6-bin:/opt/bigdata/zookeeper
       - ./etc/zookeeper:/etc/zookeeper
-      - ~/Dev/big-data/kafka_2.12-2.3.1:/opt/kafka
+      - ~/Dev/big-data/kafka_2.12-2.3.1:/opt/bigdata/kafka
       - ./etc/kafka:/etc/kafka
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
-    environment:
-      ZOO_HOME: /opt/zookeeper
-      ZOOCFGDIR: /etc/zookeeper
-      KAFKA_HOME: /opt/kafka
   hd-3:
     image: hd-container-kafka:1.0
     hostname: hd-3
@@ -39,12 +31,8 @@ services:
       - 2183:2181
       - 9094:9092
     volumes:
-      - ~/Dev/big-data/apache-zookeeper-3.5.6-bin:/opt/zookeeper
+      - ~/Dev/big-data/apache-zookeeper-3.5.6-bin:/opt/bigdata/zookeeper
       - ./etc/zookeeper:/etc/zookeeper
-      - ~/Dev/big-data/kafka_2.12-2.3.1:/opt/kafka
+      - ~/Dev/big-data/kafka_2.12-2.3.1:/opt/bigdata/kafka
       - ./etc/kafka:/etc/kafka
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
-    environment:
-      ZOO_HOME: /opt/zookeeper
-      ZOOCFGDIR: /etc/zookeeper
-      KAFKA_HOME: /opt/kafka
