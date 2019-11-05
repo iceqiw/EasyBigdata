@@ -19,10 +19,7 @@ ENV CLASSPATH .:${JAVA_HOME}/lib:${JRE_HOME}/lib
 ENV PATH ${JAVA_HOME}/bin:$PATH
 
 # hadoop env
-RUN mkdir -p /opt/data/zookeeper
-RUN mkdir -p /opt/data/kafka
-RUN mkdir -p /var/log/zookeeper
-RUN mkdir -p /var/log/kafka
+RUN mkdir -p /var/logs
 
 # install openssh
 RUN yum -y  install openssh-server openssh-clients

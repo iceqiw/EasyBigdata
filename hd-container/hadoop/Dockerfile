@@ -19,12 +19,7 @@ ENV CLASSPATH .:${JAVA_HOME}/lib:${JRE_HOME}/lib
 ENV PATH ${JAVA_HOME}/bin:$PATH
 
 # hadoop env
-RUN mkdir -p /opt/data/hadoop/hdfs/name
-RUN mkdir -p /opt/data/hadoop/hdfs/data
-RUN mkdir -p /opt/data/hadoop/tmp
-RUN mkdir -p /var/log/hadoop
-RUN mkdir -p /var/log/yarn
-RUN mkdir -p /var/log/hive
+RUN mkdir -p /var/logs
 
 # install openssh
 RUN yum -y  install openssh-server openssh-clients
