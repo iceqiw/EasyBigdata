@@ -2,7 +2,7 @@
 # Author        qiwei
 
 # build a new image with basic  centos
-FROM centos
+FROM centos:7
 # who is the author
 MAINTAINER qiwei
 
@@ -12,14 +12,11 @@ ADD jdk-8u231-linux-x64.tar.gz /usr/local/java/
 # make a symbol link
 RUN ln -s /usr/local/java/jdk1.8.0_231 /usr/local/java/jdk
 
-# set environment variables
+# set java environment variables
 ENV JAVA_HOME /usr/local/java/jdk
 ENV JRE_HOME ${JAVA_HOME}/jre
 ENV CLASSPATH .:${JAVA_HOME}/lib:${JRE_HOME}/lib
 ENV PATH ${JAVA_HOME}/bin:$PATH
-
-# hadoop env
-RUN mkdir -p /var/logs
 
 # install openssh
 RUN yum -y  install openssh-server openssh-clients

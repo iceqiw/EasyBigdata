@@ -1,38 +1,38 @@
 version: '3'
 services:
   hd-1:
-    image: hd-container-kafka:1.0
+    image: hd-container:1.0
     hostname: hd-1
     ports:
       - 2181:2181
       - 9092:9092
     volumes:
       - ~/bigdata/apache-zookeeper-3.5.6-bin:/opt/bigdata/zookeeper
-      - ./etc/zookeeper:/etc/zookeeper
+      - ./etc/zookeeper:/opt/bigdata/etc/zookeeper
       - ~/bigdata/kafka_2.12-2.3.1:/opt/bigdata/kafka
-      - ./etc/kafka:/etc/kafka
+      - ./etc/kafka:/opt/bigdata/etc/kafka
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
   hd-2:
-    image: hd-container-kafka:1.0
+    image: hd-container:1.0
     hostname: hd-2
     ports:
       - 2182:2181
       - 9093:9092
     volumes:
       - ~/bigdata/apache-zookeeper-3.5.6-bin:/opt/bigdata/zookeeper
-      - ./etc/zookeeper:/etc/zookeeper
+      - ./etc/zookeeper:/opt/bigdata/etc/zookeeper
       - ~/bigdata/kafka_2.12-2.3.1:/opt/bigdata/kafka
-      - ./etc/kafka:/etc/kafka
+      - ./etc/kafka:/opt/bigdata/etc/kafka
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
   hd-3:
-    image: hd-container-kafka:1.0
+    image: hd-container:1.0
     hostname: hd-3
     ports:
       - 2183:2181
       - 9094:9092
     volumes:
       - ~/bigdata/apache-zookeeper-3.5.6-bin:/opt/bigdata/zookeeper
-      - ./etc/zookeeper:/etc/zookeeper
+      - ./etc/zookeeper:/opt/bigdata/etc/zookeeper
       - ~/big-data/kafka_2.12-2.3.1:/opt/bigdata/kafka
-      - ./etc/kafka:/etc/kafka
+      - ./etc/kafka:/opt/bigdata/etc/kafka
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh

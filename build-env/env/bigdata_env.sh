@@ -1,8 +1,8 @@
 #!/bin/bash
-
 export BIGDATAHOME=/opt/bigdata
-export BIGDATA_CONF=/etc
-export BIGDATA_LOG=/var/logs
+export BIGDATA_CONF=$BIGDATAHOME/etc
+export BIGDATA_LOG=$BIGDATAHOME/logs
+
 export HADOOP_HOME=$BIGDATAHOME/hadoop
 export ZOO_HOME=$BIGDATAHOME/zookeeper
 export HBASE_HOME=$BIGDATAHOME/hbase

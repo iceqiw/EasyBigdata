@@ -10,9 +10,9 @@ services:
       - 50070:50070
     volumes:
       - ~/bigdata/hadoop-3.1.2:/opt/bigdata/hadoop
-      - ./etc/hadoop:/etc/hadoop
+      - ./etc/hadoop:/opt/bigdata/etc/hadoop
       - ~/big-data/apache-hive-3.1.2-bin:/opt/bigdata/hive
-      - ./etc/hive:/etc/hive
+      - ./etc/hive:/opt/bigdata/etc/hive
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
   hadoop-slave1:
     image: hd-container:1.0
@@ -21,7 +21,7 @@ services:
       - 8043:8042
     volumes:
       - ~/bigdata/hadoop-3.1.2:/opt/bigdata/hadoop
-      - ./etc/hadoop:/etc/hadoop
+      - ./etc/hadoop:/opt/bigdata/etc/hadoop
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
   hadoop-slave2:
     image: hd-container:1.0
@@ -30,7 +30,7 @@ services:
       - 8044:8042
     volumes:
       - ~/bigdata/hadoop-3.1.2:/opt/bigdata/hadoop
-      - ./etc/hadoop:/etc/hadoop
+      - ./etc/hadoop:/opt/bigdata/etc/hadoop
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
   zeppelin:
     image: hd-container:1.0
