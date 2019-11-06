@@ -10,24 +10,24 @@ docker build -t hd-container:1.0 .
 docker-compose -f mac-docker-compose-hive.yml up -d
 ```
 
-## hadoop 常用命令
+## hadoop 启动命令
 
-`hdfs namenode -format`
+`hdfs namenode -format` 格式化namenode
 
-`hdfs --daemon start namenode`
+`hdfs --daemon start namenode` 启动namenode
 
-`hdfs --daemon start datanode`
+`hdfs --daemon start datanode` 启动datanode
 
-`yarn --daemon start resourcemanager`
+`yarn --daemon start resourcemanager` 启动resourcemanager
 
-`yarn --daemon start nodemanager`
+`yarn --daemon start nodemanager` 启动nodemanager
 
 ## hive 启动命令
 
-`nohup hiveserver2 &`
+`nohup hiveserver2 &` 启动hiveserver2
 
-`nohup hive --service metastore &
-`
+`nohup hive --service metastore &` 启动metastore
+
 
 ## hadoop 集群运行命令
 
@@ -37,9 +37,11 @@ docker-compose -f mac-docker-compose-hive.yml up -d
 3.启动datanode,nodemanager（所有节点）
 
 hdfs namenode -format
+
 hdfs --daemon start namenode
-hdfs --daemon start datanode
 yarn --daemon start resourcemanager
+
+hdfs --daemon start datanode
 yarn --daemon start nodemanager
 
 4.初始化hive warehouse目录
