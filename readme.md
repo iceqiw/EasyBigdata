@@ -22,8 +22,6 @@ docker-compose -f mac-docker-compose-hive.yml up -d
 
 `yarn --daemon start nodemanager`
 
-`hadoop fs -mkdir -p /user/hive/warehouse`
-
 ## hive 启动命令
 
 `nohup hiveserver2 &`
@@ -35,11 +33,14 @@ docker-compose -f mac-docker-compose-hive.yml up -d
 
 ```
 1.格式化namenode
+2.启动namenode,resourcemanager（主节点）
+3.启动datanode,nodemanager（所有节点）
+
 hdfs namenode -format
-
-2.启动namenode（主节点）
-
-3.启动datanode （所有节点）
+hdfs --daemon start namenode
+hdfs --daemon start datanode
+yarn --daemon start resourcemanager
+yarn --daemon start nodemanager
 
 4.初始化hive warehouse目录
 hadoop fs -mkdir -p /user/hive/warehouse
@@ -53,6 +54,7 @@ schematool -dbType derby -initSchema
 nohup hive --service metastore &
 
 nohup hiveserver2 &
+
 ```
 
 ## hive server2 连接

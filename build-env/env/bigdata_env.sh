@@ -4,10 +4,10 @@ export BIGDATA_CONF=$BIGDATAHOME/etc
 export BIGDATA_LOG=$BIGDATAHOME/logs
 
 export HADOOP_HOME=$BIGDATAHOME/hadoop
-export ZOO_HOME=$BIGDATAHOME/zookeeper
-export HBASE_HOME=$BIGDATAHOME/hbase
-export Hive_HOME=$BIGDATAHOME/hive
-export KAFKA_HOME=$BIGDATAHOME/kafka
+#export ZOO_HOME=$BIGDATAHOME/zookeeper
+#export HBASE_HOME=$BIGDATAHOME/hbase
+export HIVE_HOME=$BIGDATAHOME/hive
+#export KAFKA_HOME=$BIGDATAHOME/kafka
 
 if [[ -n $HADOOP_HOME ]]; then
   export PATH=$HADOOP_HOME/bin:$PATH
