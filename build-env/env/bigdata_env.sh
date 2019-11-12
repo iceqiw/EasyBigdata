@@ -3,11 +3,25 @@ export BIGDATAHOME=/opt/bigdata
 export BIGDATA_CONF=$BIGDATAHOME/etc
 export BIGDATA_LOG=$BIGDATAHOME/logs
 
-export HADOOP_HOME=$BIGDATAHOME/hadoop
-#export ZOO_HOME=$BIGDATAHOME/zookeeper
-#export HBASE_HOME=$BIGDATAHOME/hbase
-export HIVE_HOME=$BIGDATAHOME/hive
-#export KAFKA_HOME=$BIGDATAHOME/kafka
+if [[ -d "$BIGDATAHOME/hadoop" ]]; then
+    export HADOOP_HOME=$BIGDATAHOME/hadoop
+fi
+
+if [[ -d "$BIGDATAHOME/hive" ]]; then
+    export HIVE_HOME=$BIGDATAHOME/hive
+fi
+
+if [[ -d "$BIGDATAHOME/zookeeper" ]]; then
+    export ZOO_HOME=$BIGDATAHOME/zookeeper
+fi
+
+if [[ -d "$BIGDATAHOME/hbase" ]]; then
+    export HBASE_HOME=$BIGDATAHOME/hbase
+fi
+
+if [[ -d "$BIGDATAHOME/kafka" ]]; then
+    export KAFKA_HOME=$BIGDATAHOME/kafka
+fi
 
 if [[ -n $HADOOP_HOME ]]; then
   export PATH=$HADOOP_HOME/bin:$PATH
