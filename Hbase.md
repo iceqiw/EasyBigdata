@@ -16,10 +16,10 @@ none
 ```
 ## 启动
 ```
-#1 start hmaster
+#1 start hmaster (master node)
 hbase-daemon.sh start master
 
-#2 start regionserver
+#2 start regionserver (all node)
 hbase-daemon.sh start regionserver
 
 ```
