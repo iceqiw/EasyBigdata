@@ -1,5 +1,7 @@
 ## 部署
 
+参考Hadoop，kafka部署，启动hadoop，zk
+
 |       hadoop-master1       | hadoop-slave1 | hadoop-slave2 |
 |:--------------------------:|:-------------:|:-------------:|
 |     namenode,datanode      |   datanode    |   datanode    |

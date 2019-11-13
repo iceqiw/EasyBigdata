@@ -2,7 +2,7 @@
 ## 部署
 
 
-|     hd-1      |     hd-2      |     hd-3      |
+|     hadoop-master1      |     hadoop-slave1      |     hadoop-slave1      |
 |:-------------:|:-------------:|:-------------:|
 |      zk1（myid=>1)      |      zk2  （myid=>2)     |      zk3  （myid=>3)     |
 | kafka broker1 | kafka broker3 | kafka broker3 |
