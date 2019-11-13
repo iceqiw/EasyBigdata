@@ -12,11 +12,13 @@
 ## 初始化 
 
 ```
-
-
 ```
 ## 启动
 ```
+#1 start hmaster
+hbase-daemon.sh start master
 
+#2 start regionserver
+hbase-daemon.sh start regionserver
 
 ```
