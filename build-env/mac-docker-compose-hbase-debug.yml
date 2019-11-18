@@ -11,9 +11,9 @@ services:
       - 2181:2181
     volumes:
       - ~/bigdata/hadoop:/opt/bigdata/hadoop
-      - ./etc/hadoop:/opt/bigdata/etc/hadoop
+      - ./etc-debug/hadoop:/opt/bigdata/etc/hadoop
       - ~/bigdata/hbase:/opt/bigdata/hbase
-      - ./etc/hbase:/opt/bigdata/etc/hbase
+      - ./etc-debug/hbase:/opt/bigdata/etc/hbase
       - ~/bigdata/zookeeper:/opt/bigdata/zookeeper
-      - ./etc/zookeeper:/opt/bigdata/etc/zookeeper
+      - ./etc-debug/zookeeper:/opt/bigdata/etc/zookeeper
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
