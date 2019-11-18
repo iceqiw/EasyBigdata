@@ -6,8 +6,8 @@
 |:--------------------------:|:-------------:|:-------------:|
 |     namenode,datanode      |   datanode    |   datanode    |
 | resoursemanager,nodemanger |  nodemanger   |  nodemanger   |
-|   HMaster,regionserver    |     regionserver |    regionserver     |              |
-|   zk    |     zk |    zk     |              |
+|   HMaster,regionserver    |     regionserver |    regionserver     |       
+|   zk    |     zk |    zk     |
 
 ## 初始化 
 
