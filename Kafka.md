@@ -2,10 +2,10 @@
 ## 部署
 
 
-|     hadoop-master1      |     hadoop-slave1      |     hadoop-slave1      |
-|:-------------:|:-------------:|:-------------:|
-|      zk1（myid=>1)      |      zk2  （myid=>2)     |      zk3  （myid=>3)     |
-| kafka broker1 | kafka broker3 | kafka broker3 |
+| hadoop-master1 | hadoop-slave1 | hadoop-slave2 |
+|:--------------:|:-------------:|:-------------:|
+| zk1（myid=>1)  | zk2（myid=>2) | zk3（myid=>3) |
+| kafka broker1  | kafka broker2 | kafka broker3 |
 
 
 ## 初始化
@@ -17,8 +17,6 @@ mkdir -p /opt/bigdata/data/zookeeper
 echo 1 > /opt/bigdata/data/zookeeper/myid 
 echo 2 > /opt/bigdata/data/zookeeper/myid 
 echo 3 > /opt/bigdata/data/zookeeper/myid 
-
-
 ```
 ## 启动
 ```
