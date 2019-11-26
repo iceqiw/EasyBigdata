@@ -5,11 +5,13 @@ services:
     hostname: hadoop-master1
     ports:
       - 2181:2181
-      - 9092:9092
+      - 9092:9092      
+      - 9000:9000
     volumes:
       - ~/bigdata/zookeeper:/opt/bigdata/zookeeper
       - ./etc/zookeeper:/opt/bigdata/etc/zookeeper
       - ~/bigdata/kafka:/opt/bigdata/kafka
+      - ~/bigdata/kafka-manager:/opt/bigdata/kafka-manager
       - ./etc/kafka:/opt/bigdata/etc/kafka
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
   hadoop-slave1:
