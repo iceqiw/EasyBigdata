@@ -29,7 +29,7 @@ kafka-server-start.sh -daemon /opt/bigdata/etc/kafka/server-2.properties
 kafka-server-start.sh -daemon /opt/bigdata/etc/kafka/server-3.properties
 
 #3 start kafak manager
-nohup bin/kafka-manager -Dconfig.file=conf/application.conf &
+nohup kafka-manager &
 ```
 ## 备注
 
