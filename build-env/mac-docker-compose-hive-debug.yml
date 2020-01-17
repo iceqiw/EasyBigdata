@@ -16,4 +16,5 @@ services:
       - ./etc-debug/hadoop:/opt/bigdata/etc/hadoop
       - ~/bigdata/hive:/opt/bigdata/hive
       - ./etc-debug/hive:/opt/bigdata/etc/hive
+      - ./etc-debug/tez:/opt/bigdata/etc/tez
       - ./env/bigdata_env.sh:/etc/profile.d/bigdata_env.sh
