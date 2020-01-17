@@ -1,0 +1,11 @@
+version: '3'
+services:
+  build-env:
+    image: hd-container:1.0
+    hostname: btez
+    volumes:
+      - /home/qiwei/dev/apache-maven-3.6.2:/opt/maven
+      - /home/qiwei/.m2/repository:/root/.m2/repository
+      - /home/qiwei/workspace/source/tez:/source/tez
+      - ./env/build.sh:/etc/profile.d/build.sh
+      - ./app:/opt/app
