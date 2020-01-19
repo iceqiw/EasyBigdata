@@ -1,8 +1,5 @@
 *.tar.gz
-build-env/hive*
-build-env/hadoop*
-build-env/tez*
 .DS_Store
 .idea
 *.jar
-app/*
+build-env/app/*
