@@ -6,3 +6,7 @@ services:
     privileged: true
     ports:
       - 88:88
+      - 749:749
+      - 750:750
+    volumes:
+      - ./app:/opt/app

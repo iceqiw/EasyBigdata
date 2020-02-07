@@ -20,7 +20,7 @@
 
 <property>
   <name>ssl.client.truststore.location</name>
-  <value>/Users/wei.qi/bigdata/etc/truststore.jks</value>
+  <value>/home/qiwei/bigdata/etc/truststore.jks</value>
   <description>Truststore to be used by clients like distcp. Must be
   specified.
   </description>
@@ -50,7 +50,7 @@
 
 <property>
   <name>ssl.client.keystore.location</name>
-  <value>/Users/wei.qi/bigdata/etc/keystore.jks</value>
+  <value>/home/qiwei/bigdata/etc/keystore.jks</value>
   <description>Keystore to be used by clients like distcp. Must be
   specified.
   </description>
