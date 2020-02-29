@@ -8,9 +8,9 @@ MAINTAINER qiwei
 
 # add jdk
 RUN mkdir /usr/local/java
-ADD jdk-8u231-linux-x64.tar.gz /usr/local/java/
+ADD jdk-8u241-linux-x64.tar.gz /usr/local/java/
 # make a symbol link
-RUN ln -s /usr/local/java/jdk1.8.0_231 /usr/local/java/jdk
+RUN ln -s /usr/local/java/jdk1.8.0_241 /usr/local/java/jdk
 
 # set java environment variables
 ENV JAVA_HOME /usr/local/java/jdk
