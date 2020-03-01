@@ -9,13 +9,13 @@ function vaild_host() {
   fi
 }
 
-function hdfs_init() {
+function init_hdfs() {
   echo "hdfs init start"
   hdfs namenode -format
   echo "hdfs init end"
 }
 
-function master() {
+function op_master() {
   if vaild_host; then
     return
   fi
@@ -44,7 +44,7 @@ function master() {
   esac
 }
 
-function slave() {
+function op_slave() {
   if vaild_host; then
     return
   fi

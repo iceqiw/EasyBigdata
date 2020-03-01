@@ -6,27 +6,29 @@ export JAVA_HOME=$BIGDATAHOME/jdk1.8.0_241
 export PATH=$JAVA_HOME/bin:$PATH
 
 if [[ -d "$BIGDATAHOME/hadoop" ]]; then
-    export HADOOP_HOME=$BIGDATAHOME/hadoop
+  export HADOOP_HOME=$BIGDATAHOME/hadoop
+  source $BIGDATAHOME/sbin/hadoop.sh
 fi
 
 if [[ -d "$BIGDATAHOME/hive" ]]; then
-    export HIVE_HOME=$BIGDATAHOME/hive
+  export HIVE_HOME=$BIGDATAHOME/hive
+  source $BIGDATAHOME/sbin/hive.sh
 fi
 
 if [[ -d "$BIGDATAHOME/zookeeper" ]]; then
-    export ZOO_HOME=$BIGDATAHOME/zookeeper
+  export ZOO_HOME=$BIGDATAHOME/zookeeper
 fi
 
 if [[ -d "$BIGDATAHOME/hbase" ]]; then
-    export HBASE_HOME=$BIGDATAHOME/hbase
+  export HBASE_HOME=$BIGDATAHOME/hbase
 fi
 
 if [[ -d "$BIGDATAHOME/kafka" ]]; then
-    export KAFKA_HOME=$BIGDATAHOME/kafka
+  export KAFKA_HOME=$BIGDATAHOME/kafka
 fi
 
 if [[ -d "$BIGDATAHOME/kafka-manager" ]]; then
-    export KAFKA_MANAGER_HOME=$BIGDATAHOME/kafka-manager
+  export KAFKA_MANAGER_HOME=$BIGDATAHOME/kafka-manager
 fi
 
 if [[ -n $HADOOP_HOME ]]; then
@@ -36,7 +38,7 @@ if [[ -n $HADOOP_HOME ]]; then
   export HADOOP_CONF_DIR=$BIGDATA_CONF/hadoop
   export HADOOP_LOG_DIR=$BIGDATA_LOG/hadoop
   export YARN_CONF_DIR=$BIGDATA_CONF/hadoop
-  export YARN_LOG_DIR=$BIGDATA_LOG/yarn
+  export YARN_LOG_DIR=$BIGDATA_LOG/hadoop
 fi
 
 if [[ -n $HIVE_HOME ]]; then
