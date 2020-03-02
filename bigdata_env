@@ -15,6 +15,12 @@ if [[ -d "$BIGDATAHOME/hive" ]]; then
   source $BIGDATAHOME/sbin/hive.sh
 fi
 
+if [[ -d "$BIGDATAHOME/tez" ]]; then
+  export TEZ_CONF_DIR=$BIGDATA_CONF/tez
+  export TEZ_JARS=$BIGDATAHOME/tez
+  export HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}/*:${TEZ_JARS}/lib/*
+fi
+
 if [[ -d "$BIGDATAHOME/zookeeper" ]]; then
   export ZOO_HOME=$BIGDATAHOME/zookeeper
 fi

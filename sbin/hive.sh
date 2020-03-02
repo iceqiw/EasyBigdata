@@ -16,6 +16,11 @@ function start_hive() {
   nohup hiveserver2 &
 }
 
+function stop_hive() {
+  kill_hs2
+  kill_hms
+}
+
 function kill_hs2() {
   ps -ef | grep hiveserver2 | awk '{print $2}' | xargs kill -9
 }

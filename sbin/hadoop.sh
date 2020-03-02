@@ -72,3 +72,39 @@ function op_slave() {
     ;;
   esac
 }
+
+function start_mr_js() {
+  echo 'start jobhistory server'
+  mr-jobhistory-daemon.sh start historyserver
+}
+
+function stop_mr_js() {
+  echo 'stop jobhistory server'
+  mr-jobhistory-daemon.sh stop historyserver
+}
+
+function op_stop_all() {
+  echo 'stop all server'
+  hdfs --daemon stop datanode
+  yarn --daemon stop nodemanager
+
+  hdfs --daemon stop namenode
+  yarn --daemon stop resourcemanager
+
+  mr-jobhistory-daemon.sh stop historyserver
+
+  yarn --daemon stop timelineserver
+}
+
+function op_start_all() {
+  echo 'start all server'
+  hdfs --daemon start namenode
+  yarn --daemon start resourcemanager
+
+  hdfs --daemon start datanode
+  yarn --daemon start nodemanager
+
+  mr-jobhistory-daemon.sh start historyserver
+
+  yarn --daemon start timelineserver
+}

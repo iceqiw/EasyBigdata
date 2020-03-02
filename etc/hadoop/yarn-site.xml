@@ -19,8 +19,24 @@
         <name>yarn.nodemanager.resource.cpu-vcores</name>
         <value>4</value>
     </property>
+
     <property>
-        <name>yarn.web-proxy.address</name>
-        <value>hadoop-master1:9001</value>
+        <name>yarn.log-aggregation-enable</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>yarn.timeline-service.enabled</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>yarn.resourcemanager.system-metrics-publisher.enabled</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>yarn.timeline-service.generic-application-history.enabled</name>
+        <value>true</value>
     </property>
 </configuration>
