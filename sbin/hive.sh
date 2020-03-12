@@ -16,6 +16,11 @@ function start_hive() {
   nohup hiveserver2 &
 }
 
+function init_metastore_db() {
+  echo "need to create db as hive-site.xml configured db name"
+  schematool -dbType postgres -initSchema
+}
+
 function stop_hive() {
   kill_hs2
   kill_hms
