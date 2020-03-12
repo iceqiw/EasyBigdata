@@ -8,6 +8,10 @@ function init_hive() {
   echo "warehouse Initialization complete"
 }
 
+function init_hms_db() {
+  schematool -dbType postgres -initSchema
+}
+
 function start_hive() {
   # 3 启动hive metastore
   nohup hive --service metastore &

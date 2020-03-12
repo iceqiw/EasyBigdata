@@ -12,7 +12,6 @@ function vaild_host() {
 function init_hdfs() {
   echo "hdfs init start"
   hdfs namenode -format
-  echo "hdfs init end"
 }
 
 function op_master() {
@@ -22,24 +21,24 @@ function op_master() {
 
   case $1 in
   start)
-    echo '启动hadoop集群'
+    echo 'start hadoop nn,rm'
     hdfs --daemon start namenode
     yarn --daemon start resourcemanager
     ;;
   stop)
-    echo '停止hadoop集群'
+    echo 'stop hadoop nn,rm'
     hdfs --daemon stop namenode
     yarn --daemon stop resourcemanager
     ;;
   restart)
-    echo '重启'
+    echo 'restart'
     hdfs --daemon stop namenode
     yarn --daemon stop resourcemanager
     hdfs --daemon start namenode
     yarn --daemon start resourcemanager
     ;;
   *)
-    echo '请输入正确的命令'
+    echo 'input correct command'
     ;;
   esac
 }
@@ -51,34 +50,34 @@ function op_slave() {
 
   case $1 in
   start)
-    echo '启动hadoop集群'
+    echo 'start hadoop dn,nm'
     hdfs --daemon start datanode
     yarn --daemon start nodemanager
     ;;
   stop)
-    echo '停止hadoop集群'
+    echo 'stop hadoop dn,nm'
     hdfs --daemon stop datanode
     yarn --daemon stop nodemanager
     ;;
   restart)
-    echo '重启'
+    echo 'restart'
     hdfs --daemon stop datanode
     yarn --daemon stop nodemanager
     hdfs --daemon start datanode
     yarn --daemon start nodemanager
     ;;
   *)
-    echo '请输入正确的命令'
+    echo 'input correct command'
     ;;
   esac
 }
 
-function start_mr_js() {
+function op_start_mr_js() {
   echo 'start jobhistory server'
   mr-jobhistory-daemon.sh start historyserver
 }
 
-function stop_mr_js() {
+function op_stop_mr_js() {
   echo 'stop jobhistory server'
   mr-jobhistory-daemon.sh stop historyserver
 }
@@ -90,6 +89,10 @@ function op_stop_all() {
 
   hdfs --daemon stop namenode
   yarn --daemon stop resourcemanager
+}
+
+function op_stop_other() {
+  echo 'stop js,ts server'
 
   mr-jobhistory-daemon.sh stop historyserver
 
@@ -103,7 +106,10 @@ function op_start_all() {
 
   hdfs --daemon start datanode
   yarn --daemon start nodemanager
+}
 
+function op_start_other() {
+  echo 'start js,ts server'
   mr-jobhistory-daemon.sh start historyserver
 
   yarn --daemon start timelineserver
