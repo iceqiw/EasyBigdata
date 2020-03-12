@@ -68,7 +68,7 @@ Kafka: Kafka.md
 ├── etc -> /home/qiwei/workspace/bigdata-docker/etc
 ├── hadoop
 ├── hive
-├── jdk1.8.0_241 -> /home/qiwei/dev/jdk1.8.0_241
+├── java -> /home/qiwei/dev/jdk1.8.0_241
 ├── sbin -> /home/qiwei/workspace/bigdata-docker/sbin
 ├── tez
 └── tez-0.9.2-minimal.tar.gz
