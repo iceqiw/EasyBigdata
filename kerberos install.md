@@ -88,6 +88,12 @@ systemctl start kadmin krb5kdc
 
 ```
 kdc = tcp/realm.example.com:88
+
+[realms]
+ HADOOP.COM = {
+  kdc = tcp/kdc:88
+  admin_server = kdc
+ }
 ```
 
 ## 常用命令
