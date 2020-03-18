@@ -66,6 +66,8 @@ includedir /etc/krb5.conf.d/
 
 ```shell
 vim /var/kerberos/krb5kdc/kadm5.acl
+
+改为 HADOOP.COM
 ```
 
 ## 初始化

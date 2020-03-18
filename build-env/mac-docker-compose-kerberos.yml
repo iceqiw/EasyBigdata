@@ -5,7 +5,7 @@ services:
     hostname: kdc
     privileged: true
     ports:
-      - 88:88
+      - 188:88
       - 749:749
       - 750:750
     volumes:
