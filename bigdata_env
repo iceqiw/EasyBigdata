@@ -43,8 +43,6 @@ if [[ -n $HADOOP_HOME ]]; then
 
   export HADOOP_CONF_DIR=$BIGDATA_CONF/hadoop
   export HADOOP_LOG_DIR=$BIGDATA_LOG/hadoop
-  export YARN_CONF_DIR=$BIGDATA_CONF/hadoop
-  export YARN_LOG_DIR=$BIGDATA_LOG/hadoop
 fi
 
 if [[ -n $HIVE_HOME ]]; then
