@@ -85,9 +85,63 @@ yarn --daemon start nodemanager
 
 ## Federation 配置
 
+- 服务端
+
+```xml
+    <!--federation-->
+    <property>
+        <name>yarn.resourcemanager.epoch</name>
+        <value>1</value>
+    </property>
+    <property>
+        <name>yarn.federation.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.cluster-id</name>
+        <value>cluster1</value>
+    </property>
+    <property>
+        <name>yarn.federation.state-store.class</name>
+        <value>org.apache.hadoop.yarn.server.federation.store.impl.ZookeeperFederationStateStore</value>
+    </property>
+    <property>
+        <name>yarn.router.bind-host</name>
+        <value>0.0.0.0</value>
+    </property>
+    <property>
+        <name>yarn.router.clientrm.interceptor-class.pipeline</name>
+        <value>org.apache.hadoop.yarn.server.router.clientrm.FederationClientInterceptor</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.amrmproxy.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.amrmproxy.interceptor-class.pipeline</name>
+        <value>org.apache.hadoop.yarn.server.nodemanager.amrmproxy.FederationInterceptor</value>
+    </property>
+    <!--federation end-->
+```
 
 
 
+- 客户端
+
+  ```xml
+  <configuration>
+      <property>
+          <name>yarn.resourcemanager.address</name>
+          <value>hadoop-master1:8050</value>
+      </property>
+      <property>
+          <name>yarn.resourcemanager.scheduler.address</name>
+          <value>hadoop-master1:8049</value>
+      </property>
+  </configuration>
+  ```
+
+  
 
 ## Test
 
