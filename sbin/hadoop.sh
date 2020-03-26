@@ -108,9 +108,25 @@ function op_start_all() {
   yarn --daemon start nodemanager
 }
 
+function yarn_start_all() {
+  echo 'start yarn server'
+  yarn --daemon start resourcemanager
+  yarn --daemon start nodemanager
+}
+
+function hdfs_start_all() {
+  echo 'start yarn server'
+  hdfs --daemon start namenode
+  hdfs --daemon start datanode
+}
+
 function op_start_other() {
   echo 'start js,ts server'
   mr-jobhistory-daemon.sh start historyserver
 
   yarn --daemon start timelineserver
+}
+
+function yarn_router_start() {
+  yarn --daemon start router
 }

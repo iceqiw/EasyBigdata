@@ -23,6 +23,7 @@ fi
 
 if [[ -d "$BIGDATAHOME/zookeeper" ]]; then
   export ZOO_HOME=$BIGDATAHOME/zookeeper
+  source $BIGDATAHOME/sbin/zookeeper.sh
 fi
 
 if [[ -d "$BIGDATAHOME/hbase" ]]; then
