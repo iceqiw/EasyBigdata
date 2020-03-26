@@ -130,3 +130,7 @@ function op_start_other() {
 function yarn_router_start() {
   yarn --daemon start router
 }
+
+function yarn_fer_test() {
+  yarn --config etc/hadoop-cli jar hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.3.jar pi 10 10
+}
