@@ -108,6 +108,15 @@ function op_start_all() {
   yarn --daemon start nodemanager
 }
 
+function ha_start_all() {
+  echo 'start all server'
+  hdfs --config etc/hadoop-ha --daemon start namenode
+  yarn --config etc/hadoop-ha --daemon start resourcemanager
+
+  hdfs --config etc/hadoop-ha --daemon start datanode
+  yarn --config etc/hadoop-ha --daemon start nodemanager
+}
+
 function yarn_start_all() {
   echo 'start yarn server'
   yarn --daemon start resourcemanager

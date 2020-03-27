@@ -42,7 +42,7 @@ yarn --daemon start nodemanager
 
 ## HA 配置
 
-- 添加 hosts ip hadoop-master2
+**添加 hosts ip hadoop-master2**
 
 - 添加配置
 

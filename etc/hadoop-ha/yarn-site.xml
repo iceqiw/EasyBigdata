@@ -15,10 +15,6 @@
         <name>yarn.nodemanager.resource.cpu-vcores</name>
         <value>4</value>
     </property>
-    <property>
-        <name>yarn.nodemanager.container-localizer.log.level</name>
-        <value>DEBUG</value>
-    </property>
     <!--ha-->
     <property>
         <name>yarn.resourcemanager.ha.enabled</name>
@@ -53,38 +49,4 @@
         <value>hadoop-master1:2181</value>
     </property>
     <!--ha end-->
-    <!--federation-->
-    <property>
-        <name>yarn.resourcemanager.epoch</name>
-        <value>1</value>
-    </property>
-    <property>
-        <name>yarn.federation.enabled</name>
-        <value>true</value>
-    </property>
-    <property>
-        <name>yarn.resourcemanager.cluster-id</name>
-        <value>cluster1</value>
-    </property>
-    <property>
-        <name>yarn.federation.state-store.class</name>
-        <value>org.apache.hadoop.yarn.server.federation.store.impl.ZookeeperFederationStateStore</value>
-    </property>
-    <property>
-        <name>yarn.router.bind-host</name>
-        <value>0.0.0.0</value>
-    </property>
-    <property>
-        <name>yarn.router.clientrm.interceptor-class.pipeline</name>
-        <value>org.apache.hadoop.yarn.server.router.clientrm.FederationClientInterceptor</value>
-    </property>
-    <property>
-        <name>yarn.nodemanager.amrmproxy.enabled</name>
-        <value>true</value>
-    </property>
-    <property>
-        <name>yarn.nodemanager.amrmproxy.interceptor-class.pipeline</name>
-        <value>org.apache.hadoop.yarn.server.nodemanager.amrmproxy.FederationInterceptor</value>
-    </property>
-    <!--federation end-->
 </configuration>
