@@ -143,3 +143,21 @@ function yarn_router_start() {
 function yarn_fer_test() {
   yarn --config etc/hadoop-cli jar hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.3.jar pi 10 10
 }
+
+function yarn_test() {
+  yarn jar hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.3.jar pi 10 10
+}
+
+function debug_rm() {
+  jps | grep ResourceManager | awk '{print $1}' | xargs kill -9
+  unset HADOOP_OPTS
+  export HADOOP_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
+  yarn --daemon start resourcemanager
+}
+
+function debug_nm() {
+  jps | grep NodeManager | awk '{print $1}' | xargs kill -9
+  unset HADOOP_OPTS
+  export HADOOP_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006"
+  yarn --daemon start nodemanager
+}

@@ -70,6 +70,7 @@
         <name>yarn.federation.state-store.class</name>
         <value>org.apache.hadoop.yarn.server.federation.store.impl.ZookeeperFederationStateStore</value>
     </property>
+    <!-- for router-->
     <property>
         <name>yarn.router.bind-host</name>
         <value>0.0.0.0</value>
@@ -78,6 +79,8 @@
         <name>yarn.router.clientrm.interceptor-class.pipeline</name>
         <value>org.apache.hadoop.yarn.server.router.clientrm.FederationClientInterceptor</value>
     </property>
+    <!--for router -->
+    <!--for nm -->
     <property>
         <name>yarn.nodemanager.amrmproxy.enabled</name>
         <value>true</value>
@@ -86,5 +89,6 @@
         <name>yarn.nodemanager.amrmproxy.interceptor-class.pipeline</name>
         <value>org.apache.hadoop.yarn.server.nodemanager.amrmproxy.FederationInterceptor</value>
     </property>
+    <!--for nm -->
     <!--federation end-->
 </configuration>
