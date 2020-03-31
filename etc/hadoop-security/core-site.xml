@@ -23,6 +23,14 @@
         <name>hadoop.proxyuser.qiwei.groups</name>
         <value>*</value>
     </property>
+    <property>
+        <name>hadoop.proxyuser.tw.hosts</name>
+        <value>*</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.tw.groups</name>
+        <value>*</value>
+    </property>
     <!-- kerberos -->
     <property>
         <name>hadoop.security.authentication</name>

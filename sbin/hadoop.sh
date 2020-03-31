@@ -117,6 +117,22 @@ function ha_start_all() {
   yarn --config etc/hadoop-ha --daemon start nodemanager
 }
 
+function hdfs_security_start_all() {
+  echo 'start hdfs security server'
+  unset HADOOP_OPTS
+  export HADOOP_OPTS="$HADOOP_OPTS -Djava.security.krb5.conf=/opt/bigdata/krb5.conf"
+  hdfs --config etc/hadoop-security --daemon start namenode
+  hdfs --config etc/hadoop-security --daemon start datanode
+}
+
+function hdfs_security_stop_all() {
+  echo 'start hdfs security server'
+  unset HADOOP_OPTS
+  export HADOOP_OPTS="$HADOOP_OPTS -Djava.security.krb5.conf=/opt/bigdata/krb5.conf"
+  hdfs --config etc/hadoop-security --daemon stop namenode
+  hdfs --config etc/hadoop-security --daemon stop datanode
+}
+
 function yarn_start_all() {
   echo 'start yarn server'
   yarn --daemon start resourcemanager

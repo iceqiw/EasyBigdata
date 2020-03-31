@@ -4,32 +4,43 @@
 
 ```bash
 #!/bin/bash
-export BIGDATAHOME=/Users/wei.qi/bigdata
+export BIGDATAHOME=/opt/bigdata
 export BIGDATA_CONF=$BIGDATAHOME/etc
 export BIGDATA_LOG=$BIGDATAHOME/logs
+export JAVA_HOME=$BIGDATAHOME/java
+export PATH=$JAVA_HOME/bin:$PATH
 
 if [[ -d "$BIGDATAHOME/hadoop" ]]; then
-    export HADOOP_HOME=$BIGDATAHOME/hadoop
+  export HADOOP_HOME=$BIGDATAHOME/hadoop
+  source $BIGDATAHOME/sbin/hadoop.sh
 fi
 
 if [[ -d "$BIGDATAHOME/hive" ]]; then
-    export HIVE_HOME=$BIGDATAHOME/hive
+  export HIVE_HOME=$BIGDATAHOME/hive
+  source $BIGDATAHOME/sbin/hive.sh
+fi
+
+if [[ -d "$BIGDATAHOME/tez" ]]; then
+  export TEZ_CONF_DIR=$BIGDATA_CONF/tez
+  export TEZ_JARS=$BIGDATAHOME/tez
+  export HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}/*:${TEZ_JARS}/lib/*
 fi
 
 if [[ -d "$BIGDATAHOME/zookeeper" ]]; then
-    export ZOO_HOME=$BIGDATAHOME/zookeeper
+  export ZOO_HOME=$BIGDATAHOME/zookeeper
+  source $BIGDATAHOME/sbin/zookeeper.sh
 fi
 
 if [[ -d "$BIGDATAHOME/hbase" ]]; then
-    export HBASE_HOME=$BIGDATAHOME/hbase
+  export HBASE_HOME=$BIGDATAHOME/hbase
 fi
 
 if [[ -d "$BIGDATAHOME/kafka" ]]; then
-    export KAFKA_HOME=$BIGDATAHOME/kafka
+  export KAFKA_HOME=$BIGDATAHOME/kafka
 fi
 
 if [[ -d "$BIGDATAHOME/kafka-manager" ]]; then
-    export KAFKA_MANAGER_HOME=$BIGDATAHOME/kafka-manager
+  export KAFKA_MANAGER_HOME=$BIGDATAHOME/kafka-manager
 fi
 
 if [[ -n $HADOOP_HOME ]]; then
@@ -38,8 +49,6 @@ if [[ -n $HADOOP_HOME ]]; then
 
   export HADOOP_CONF_DIR=$BIGDATA_CONF/hadoop
   export HADOOP_LOG_DIR=$BIGDATA_LOG/hadoop
-  export YARN_CONF_DIR=$BIGDATA_CONF/hadoop
-  export YARN_LOG_DIR=$BIGDATA_LOG/yarn
 fi
 
 if [[ -n $HIVE_HOME ]]; then
@@ -63,6 +72,7 @@ if [[ -n $HBASE_HOME ]]; then
   export HBASE_CONF_DIR=$BIGDATA_CONF/hbase
   export HBASE_LOG_DIR=$BIGDATA_LOG/hbase
 fi
+
 ```
 
 
@@ -71,5 +81,44 @@ fi
 
 `ln -s /user/wei/doekcer/etc etc`
 
-![image-20200119212834203](/Users/wei.qi/Library/Application Support/typora-user-images/image-20200119212834203.png)
+```bash
+# /opt/bigdata
 
+├── bigdata_env -> /home/qiwei/workspace/bigdata-docker/bigdata_env
+├── etc -> /home/qiwei/workspace/bigdata-docker/etc
+├── hadoop
+├── java -> /Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home
+└── sbin -> /home/qiwei/workspace/bigdata-docker/sbin
+```
+
+
+
+## 初始化
+
+- 环境变量
+
+  ```
+  source bigdata_env
+  ```
+
+- 初始化zk
+
+  ```
+  init_zk
+  ```
+
+- 初始化hdfs
+
+  ```
+  init_hdfs
+  ```
+
+## 启动
+
+- 启动hadoop
+
+  ```
+  op_start_all
+  ```
+
+  
