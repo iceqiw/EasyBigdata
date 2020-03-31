@@ -141,8 +141,36 @@ yarn --daemon start nodemanager
   </configuration>
   ```
 
-  
+## 安全模式
+
+```shell
+#启动命令
+hdfs_security_start_all
+
+#客户端命令
+hadoop --config etc/hadoop-security  fs -ls /tmp
+```
+
+
+
+```bash
+├── bigdata_env -> /Users/tw/Workspace/bigdata-docker/bigdata_env
+├── data
+├── etc -> /Users/tw/Workspace/bigdata-docker/etc
+├── hadoop
+├── hdfs.keytab
+├── java -> /Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home
+├── keystore.jks
+├── krb5.conf
+├── logs
+├── sbin -> /Users/tw/Workspace/bigdata-docker/sbin
+├── truststore.jks
+└── zookeeper
+```
+
+
 
 ## Test
 
 ` yarn --config etc/hadoop-cli jar hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.3.jar pi 10 10`
+
