@@ -24,11 +24,10 @@
 
 # The directory where log files are stored. (Default: ${ALLUXIO_HOME}/logs).
 # ALLUXIO_LOGS_DIR
-
 # Config properties set for Alluxio master, worker and shell. (Default: "")
 # E.g. "-Dalluxio.master.rpc.port=39999"
 # ALLUXIO_JAVA_OPTS
-ALLUXIO_JAVA_OPTS="$ALLUXIO_JAVA_OPTS -Djava.security.krb5.conf=/opt/bigdata/krb5.conf"
+ALLUXIO_JAVA_OPTS="$ALLUXIO_JAVA_OPTS -Djava.security.krb5.conf=/opt/bigdata/etc/kerberos/krb5.conf"
 # Config properties set for Alluxio master daemon. (Default: "")
 # E.g. "-Dalluxio.master.rpc.port=39999"
 # ALLUXIO_MASTER_JAVA_OPTS
