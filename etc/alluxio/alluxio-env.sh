@@ -28,7 +28,7 @@
 # Config properties set for Alluxio master, worker and shell. (Default: "")
 # E.g. "-Dalluxio.master.rpc.port=39999"
 # ALLUXIO_JAVA_OPTS
-ALLUXIO_JAVA_OPTS="$ALLUXIO_JAVA_OPTS -Djava.security.krb5.conf=/opt/bigdata/krb5.conf -Djava.security.auth.login.config=$ALLUXIO_CONF_DIR/jaas.conf"
+ALLUXIO_JAVA_OPTS="$ALLUXIO_JAVA_OPTS -Djava.security.krb5.conf=/opt/bigdata/krb5.conf"
 # Config properties set for Alluxio master daemon. (Default: "")
 # E.g. "-Dalluxio.master.rpc.port=39999"
 # ALLUXIO_MASTER_JAVA_OPTS
