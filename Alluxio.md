@@ -1,3 +1,14 @@
+# 编译
+
+```shell
+mvn -T 2C compile -DskipTests -Dmaven.javadoc.skip -Dfindbugs.skip -Dcheckstyle.skip \
+  -Dlicense.skip -pl '!webui'
+```
+
+
+
+
+
 # 启动
 
 ```shell
@@ -80,5 +91,17 @@ alluxio.master.hostname=localhost
 ```properties
 alluxio.underfs.hdfs.configuration=/opt/bigdata/etc/hadoop-security/core-site.xml:/opt/bigdata/etc/hadoop-security/hdfs-site.xml
 
+```
+
+
+
+
+
+## 问题
+
+
+
+```
+ org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$GetFsStatusRequestProto cannot be cast to com.google.protobuf.Message
 ```
 
