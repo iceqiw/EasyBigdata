@@ -407,3 +407,5 @@ export HADOOP_OS_TYPE=${HADOOP_OS_TYPE:-$(uname -s)}
 #
 # For example, to limit who can execute the namenode command,
 # export HDFS_NAMENODE_USER=hdfs
+
+HADOOP_OPTS="$HADOOP_OPTS -Djava.security.krb5.conf=/opt/bigdata/krb5.conf"

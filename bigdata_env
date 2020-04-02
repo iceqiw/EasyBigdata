@@ -38,12 +38,23 @@ if [[ -d "$BIGDATAHOME/kafka-manager" ]]; then
   export KAFKA_MANAGER_HOME=$BIGDATAHOME/kafka-manager
 fi
 
+if [[ -d "$BIGDATAHOME/alluxio" ]]; then
+  export ALLUXIO_HOME=$BIGDATAHOME/alluxio
+  source $BIGDATAHOME/sbin/alluxio.sh
+fi
+
 if [[ -n $HADOOP_HOME ]]; then
   export PATH=$HADOOP_HOME/bin:$PATH
   export PATH=$HADOOP_HOME/sbin:$PATH
 
   export HADOOP_CONF_DIR=$BIGDATA_CONF/hadoop
   export HADOOP_LOG_DIR=$BIGDATA_LOG/hadoop
+fi
+
+if [[ -n $ALLUXIO_HOME ]]; then
+  export PATH=$ALLUXIO_HOME/bin:$PATH
+  export ALLUXIO_CONF_DIR=$BIGDATA_CONF/alluxio
+  export ALLUXIO_LOGS_DIR=$BIGDATA_LOG/alluxio
 fi
 
 if [[ -n $HIVE_HOME ]]; then
