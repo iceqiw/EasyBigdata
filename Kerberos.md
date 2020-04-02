@@ -1,5 +1,11 @@
 # kerberos 安装
 
+## 构建docker 镜像
+
+```
+docker build -t kdc:1.0 .
+```
+
 ## kdc 安装
 
 `yum install -y krb5-server krb5-libs krb5-auth-dialog`

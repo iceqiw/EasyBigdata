@@ -17,55 +17,55 @@
    limitations under the License.
 -->
 <configuration>
-    <property>
-        <name>ssl.client.truststore.location</name>
-        <value>/opt/bigdata/truststore.jks</value>
-        <description>Truststore to be used by clients like distcp. Must be
+  <property>
+    <name>ssl.client.truststore.location</name>
+    <value>/opt/bigdata/etc/hadoop-security/truststore.jks</value>
+    <description>Truststore to be used by clients like distcp. Must be
   specified.
-  </description>
-    </property>
-    <property>
-        <name>ssl.client.truststore.password</name>
-        <value>12qwaszx</value>
-        <description>Optional. Default value is "".
-  </description>
-    </property>
-    <property>
-        <name>ssl.client.truststore.type</name>
-        <value>jks</value>
-        <description>Optional. The keystore file format, default value is "jks".
-  </description>
-    </property>
-    <property>
-        <name>ssl.client.truststore.reload.interval</name>
-        <value>10000</value>
-        <description>Truststore reload check interval, in milliseconds.
+    </description>
+  </property>
+  <property>
+    <name>ssl.client.truststore.password</name>
+    <value>12qwaszx</value>
+    <description>Optional. Default value is "".
+    </description>
+  </property>
+  <property>
+    <name>ssl.client.truststore.type</name>
+    <value>jks</value>
+    <description>Optional. The keystore file format, default value is "jks".
+    </description>
+  </property>
+  <property>
+    <name>ssl.client.truststore.reload.interval</name>
+    <value>10000</value>
+    <description>Truststore reload check interval, in milliseconds.
   Default value is 10000 (10 seconds).
-  </description>
-    </property>
-    <property>
-        <name>ssl.client.keystore.location</name>
-        <value>/opt/bigdata/keystore.jks</value>
-        <description>Keystore to be used by clients like distcp. Must be
+    </description>
+  </property>
+  <property>
+    <name>ssl.client.keystore.location</name>
+    <value>/opt/bigdata/etc/hadoop-security/keystore.jks</value>
+    <description>Keystore to be used by clients like distcp. Must be
   specified.
-  </description>
-    </property>
-    <property>
-        <name>ssl.client.keystore.password</name>
-        <value>12qwaszx</value>
-        <description>Optional. Default value is "".
-  </description>
-    </property>
-    <property>
-        <name>ssl.client.keystore.keypassword</name>
-        <value>12qwaszx</value>
-        <description>Optional. Default value is "".
-  </description>
-    </property>
-    <property>
-        <name>ssl.client.keystore.type</name>
-        <value>jks</value>
-        <description>Optional. The keystore file format, default value is "jks".
-  </description>
-    </property>
+    </description>
+  </property>
+  <property>
+    <name>ssl.client.keystore.password</name>
+    <value>12qwaszx</value>
+    <description>Optional. Default value is "".
+    </description>
+  </property>
+  <property>
+    <name>ssl.client.keystore.keypassword</name>
+    <value>12qwaszx</value>
+    <description>Optional. Default value is "".
+    </description>
+  </property>
+  <property>
+    <name>ssl.client.keystore.type</name>
+    <value>jks</value>
+    <description>Optional. The keystore file format, default value is "jks".
+    </description>
+  </property>
 </configuration>
