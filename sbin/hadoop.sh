@@ -136,13 +136,25 @@ function hdfs_security_stop_all() {
 function yarn_start_all() {
   echo 'start yarn server'
   yarn --daemon start resourcemanager
-  yarn --daemon start nodemanager
+  yarn --config etc/hadoop-for-nm --daemon start nodemanager
+}
+
+function yarn_stop_all() {
+  echo 'stop yarn server'
+  yarn --daemon stop resourcemanager
+  yarn --config etc/hadoop-for-nm --daemon stop nodemanager
 }
 
 function hdfs_start_all() {
-  echo 'start yarn server'
+  echo 'start hdfs server'
   hdfs --daemon start namenode
   hdfs --daemon start datanode
+}
+
+function hdfs_stop_all() {
+  echo 'stop hdfs server'
+  hdfs --daemon stop namenode
+  hdfs --daemon stop datanode
 }
 
 function op_start_other() {
@@ -154,6 +166,10 @@ function op_start_other() {
 
 function yarn_router_start() {
   yarn --daemon start router
+}
+
+function yarn_router_stop() {
+  yarn --daemon stop router
 }
 
 function yarn_fer_test() {

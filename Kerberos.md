@@ -13,7 +13,7 @@ docker build -t kdc:1.0 .
 ## kdc 配置
 
 ```shell
-vim /var/kerberos/krb5kdc/kdc.conf
+vi /var/kerberos/krb5kdc/kdc.conf
 ```
 
 ```
@@ -35,7 +35,7 @@ vim /var/kerberos/krb5kdc/kdc.conf
 ## krb5 配置
 
 ```shell
-vim /etc/krb5.conf
+vi /etc/krb5.conf
 ```
 
 ```
@@ -71,7 +71,7 @@ includedir /etc/krb5.conf.d/
 ## kadmin 修改
 
 ```shell
-vim /var/kerberos/krb5kdc/kadm5.acl
+vi /var/kerberos/krb5kdc/kadm5.acl
 
 改为 HADOOP.COM
 ```
