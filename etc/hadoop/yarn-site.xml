@@ -17,9 +17,9 @@
     </property>
     <property>
         <name>yarn.resourcemanager.scheduler.address</name>
-        <value>hadoop-master1:8049</value>
+        <value>hadoop-master1:8099</value>
     </property>
-    <!--federation-->
+    <!--federation core-->
     <property>
         <name>yarn.federation.enabled</name>
         <value>true</value>
@@ -36,6 +36,7 @@
         <name>hadoop.zk.address</name>
         <value>hadoop-master1:2181</value>
     </property>
+    <!--federation core-->
     <!-- on rm-->
     <property>
         <name>yarn.resourcemanager.epoch</name>
@@ -50,6 +51,10 @@
     <property>
         <name>yarn.router.clientrm.interceptor-class.pipeline</name>
         <value>org.apache.hadoop.yarn.server.router.clientrm.FederationClientInterceptor</value>
+    </property>
+    <property>
+        <name>yarn.federation.cache-ttl.secs</name>
+        <value>0</value>
     </property>
     <!--for router -->
     <!--federation end-->

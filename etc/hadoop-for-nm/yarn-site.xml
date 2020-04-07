@@ -17,6 +17,12 @@
     </property>
     <property>
         <name>yarn.resourcemanager.scheduler.address</name>
-        <value>hadoop-master1:8049</value>
+        <value>hadoop-master1:8099</value>
     </property>
+    <!-- proxy-->
+    <property>
+        <name>yarn.nodemanager.amrmproxy.enabled</name>
+        <value>true</value>
+    </property>
+    <!-- proxy-->
 </configuration>

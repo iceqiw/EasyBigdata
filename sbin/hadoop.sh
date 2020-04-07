@@ -165,10 +165,7 @@ function op_start_other() {
 }
 
 function yarn_router_start() {
-  echo $HADOOP_OPTS
-  export HADOOP_OPTS="$HADOOP_OPTS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
   yarn --daemon start router
-  unset HADOOP_OPTS
 }
 
 function yarn_router_stop() {
@@ -177,9 +174,9 @@ function yarn_router_stop() {
 }
 
 function yarn_fer_test() {
-  export HADOOP_OPTS="$HADOOP_OPTS -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5006"
+  #export HADOOP_OPTS="$HADOOP_OPTS -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5007"
   yarn --config etc/hadoop-cli jar hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.3.jar pi 10 10
-  unset HADOOP_OPTS
+  #unset HADOOP_OPTS
 }
 
 function yarn_test() {
@@ -188,23 +185,29 @@ function yarn_test() {
 
 function debug_rm() {
   jps | grep ResourceManager | awk '{print $1}' | xargs kill -9
-  unset HADOOP_OPTS
-  export HADOOP_OPTS="$HADOOP_OPTS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5007"
+  export HADOOP_OPTS="$HADOOP_OPTS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5008"
   yarn --daemon start resourcemanager
+  unset HADOOP_OPTS
 }
 
 function debug_nm() {
   jps | grep NodeManager | awk '{print $1}' | xargs kill -9
+  export HADOOP_OPTS="$HADOOP_OPTS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006"
+  yarn --config etc/hadoop-for-nm --daemon start nodemanager
   unset HADOOP_OPTS
-  export HADOOP_OPTS="$HADOOP_OPTS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5008"
-  yarn --daemon start nodemanager
+}
+
+function debug_router() {
+  jps | grep Router | awk '{print $1}' | xargs kill -9
+  export HADOOP_OPTS="$HADOOP_OPTS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
+  yarn --daemon start router
+  unset HADOOP_OPTS
 }
 
 function replace_job_xml() {
-  echo "/tmp/hadoop-yarn/staging/weiqi/.staging/$1/job.xml job.xml"
-  hdfs dfs -ls /tmp/hadoop-yarn/staging/weiqi/.staging/$1/
-  rm job.xml
-  hdfs dfs -get /tmp/hadoop-yarn/staging/weiqi/.staging/$1/job.xml job.xml
-  sed -i "" 's/${yarn.resourcemanager.hostname}:8030/hadoop-master1:8049/g' job.xml
-  hdfs dfs -put -f job.xml /tmp/hadoop-yarn/staging/weiqi/.staging/$1/job.xml
+  echo "/tmp/hadoop-yarn/staging/tw/.staging/$1"
+  hdfs dfs -ls /tmp/hadoop-yarn/staging/tw/.staging/$1
+  hdfs dfs -get /tmp/hadoop-yarn/staging/tw/.staging/$1 $1
+  sed -i "" 's/${yarn.resourcemanager.hostname}:8030/hadoop-master1:8049/g' $1/job.xml
+  hdfs dfs -put -f -p $1 /tmp/hadoop-yarn/staging/tw/.staging/
 }
