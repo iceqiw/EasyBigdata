@@ -117,6 +117,9 @@ xst -k hdfs.keytab hdfs/hadoop-master1@HADOOP.COM
 xst -k HTTP.keytab HTTP/hadoop-master1@HADOOP.COM
 
 
+addprinc -randkey test/hadoop-master1@HADOOP.COM
+xst -k test.keytab test/hadoop-master1@HADOOP.COM
+
 ktutil
 rkt hdfs.keytab    
 rkt HTTP.keytab
