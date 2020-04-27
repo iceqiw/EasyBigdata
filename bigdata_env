@@ -43,6 +43,10 @@ if [[ -d "$BIGDATAHOME/alluxio" ]]; then
   source $BIGDATAHOME/sbin/alluxio.sh
 fi
 
+if [[ -d "$BIGDATAHOME/spark" ]]; then
+  export SPARK_HOME=$BIGDATAHOME/spark
+fi
+
 if [[ -n $HADOOP_HOME ]]; then
   export PATH=$HADOOP_HOME/bin:$PATH
   export PATH=$HADOOP_HOME/sbin:$PATH
@@ -77,4 +81,8 @@ if [[ -n $HBASE_HOME ]]; then
   export PATH=$HBASE_HOME/sbin:$PATH
   export HBASE_CONF_DIR=$BIGDATA_CONF/hbase
   export HBASE_LOG_DIR=$BIGDATA_LOG/hbase
+fi
+
+if [[ -n $SPARK_HOME ]]; then
+  export PATH=$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH
 fi
