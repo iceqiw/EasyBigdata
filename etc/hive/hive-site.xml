@@ -26,29 +26,21 @@
         <value>thrift://hadoop-master1:9083</value>
     </property>
     <property>
-        <name>hive.execution.engine</name>
-        <value>mr</value>
-    </property>
-    <property>
         <name>hive.metastore.warehouse.dir</name>
         <value>/user/hive/warehouse</value>
     </property>
     <!--kerberos-->
-    <property>
-        <name>hive.server2.thrift.port</name>
-        <value>10001</value>
-    </property>
     <property>
         <name>hive.server2.authentication</name>
         <value>KERBEROS</value>
     </property>
     <property>
         <name>hive.server2.authentication.kerberos.principal</name>
-        <value>hive/hadoop@HADOOP.COM</value>
+        <value>hdfs/hadoop@HADOOP.COM</value>
     </property>
     <property>
         <name>hive.server2.authentication.kerberos.keytab</name>
-        <value>/opt/bigdata/hive.keytab</value>
+        <value>/opt/bigdata/hdfs.keytab</value>
     </property>
     <property>
         <name>hive.metastore.sasl.enabled</name>
@@ -56,10 +48,10 @@
     </property>
     <property>
         <name>hive.metastore.kerberos.keytab.file</name>
-        <value>/opt/bigdata/hive.keytab</value>
+        <value>/opt/bigdata/hdfs.keytab</value>
     </property>
     <property>
         <name>hive.metastore.kerberos.principal</name>
-        <value>hive/hadoop@HADOOP.COM</value>
+        <value>hdfs/hadoop@HADOOP.COM</value>
     </property>
 </configuration>
