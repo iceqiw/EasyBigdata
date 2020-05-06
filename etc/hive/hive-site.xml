@@ -26,10 +26,18 @@
         <value>thrift://hadoop-master1:9083</value>
     </property>
     <property>
+        <name>hive.execution.engine</name>
+        <value>mr</value>
+    </property>
+    <property>
         <name>hive.metastore.warehouse.dir</name>
         <value>/user/hive/warehouse</value>
     </property>
     <!--kerberos-->
+    <property>
+        <name>hive.server2.thrift.port</name>
+        <value>10001</value>
+    </property>
     <property>
         <name>hive.server2.authentication</name>
         <value>KERBEROS</value>
