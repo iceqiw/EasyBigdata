@@ -30,11 +30,11 @@
     </property>
     <property>
         <name>dfs.namenode.kerberos.principal</name>
-        <value>hdfs/tw1@HADOOP.COM</value>
+        <value>hdfs/hadoop@HADOOP.COM</value>
     </property>
     <property>
         <name>dfs.namenode.kerberos.https.principal</name>
-        <value>HTTP/tw1@HADOOP.COM</value>
+        <value>HTTP/hadoop@HADOOP.COM</value>
     </property>
     <property>
         <name>dfs.webhdfs.enabled</name>
@@ -42,7 +42,7 @@
     </property>
     <property>
         <name>dfs.web.authentication.kerberos.principal</name>
-        <value>HTTP/tw1@HADOOP.COM</value>
+        <value>HTTP/hadoop@HADOOP.COM</value>
     </property>
     <property>
         <name>dfs.web.authentication.kerberos.keytab</name>
@@ -54,7 +54,7 @@
     </property>
     <property>
         <name>dfs.datanode.kerberos.principal</name>
-        <value>hdfs/tw1@HADOOP.COM</value>
+        <value>hdfs/hadoop@HADOOP.COM</value>
     </property>
     <property>
         <name>dfs.datanode.address</name>
