@@ -39,6 +39,14 @@
         <name>hadoop.proxyuser.hdp.groups</name>
         <value>*</value>
     </property>
+    <property>
+        <name>hadoop.proxyuser.hive.hosts</name>
+        <value>*</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.hive.groups</name>
+        <value>*</value>
+    </property>
     <!-- kerberos -->
     <property>
         <name>hadoop.security.authentication</name>
