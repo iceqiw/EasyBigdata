@@ -15,45 +15,5 @@
         <name>mapreduce.reduce.env</name>
         <value>HADOOP_MAPRED_HOME=$HADOOP_HOME</value>
     </property>
-    <property>
-        <name>mapreduce.map.memory.mb</name>
-        <value>512</value>
-        <description>The amount of memory to request from the scheduler for each
-        map task. If this is not specified or is non-positive, it is inferred from
-        mapreduce.map.java.opts and mapreduce.job.heap.memory-mb.ratio.
-        If java-opts are also not specified, we set it to 1024.
-        </description>
-    </property>
-
-    <property>
-        <name>mapreduce.reduce.memory.mb</name>
-        <value>512</value>
-        <description>The amount of memory to request from the scheduler for each
-        reduce task. If this is not specified or is non-positive, it is inferred
-        from mapreduce.reduce.java.opts and mapreduce.job.heap.memory-mb.ratio.
-        If java-opts are also not specified, we set it to 1024.
-        </description>
-    </property>
-    <property>
-        <name>mapreduce.jobhistory.address</name>
-        <value>hadoop-master1:10020</value>
-        <description>MapReduce JobHistory Server IPC host:port</description>
-    </property>
-    <property>
-        <name>mapreduce.jobhistory.webapp.address</name>
-        <value>hadoop-master1:19888</value>
-        <description>MapReduce JobHistory Server Web UI host:port</description>
-    </property>
-    <property>
-        <name>mapreduce.jobhistory.done-dir</name>
-        <value>/job/history/done</value>
-    </property>
-    <property>
-        <name>mapreduce.jobhistory.intermediate-done-dir</name>
-        <value>/job/history/done_intermediate</value>
-    </property>
-    <!-- <property>
-        <name>yarn.app.mapreduce.am.command-opts</name>
-        <value>-Xmx1024m -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5007</value>
-    </property> -->
+    <!-- <property><name>yarn.app.mapreduce.am.command-opts</name><value>-Xmx1024m -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5007</value></property> -->
 </configuration>
