@@ -1,0 +1,20 @@
+version: '3'
+services:
+  hadoop-master1:
+    image: hd-container:1.0
+    hostname: hadoop-master1
+    ports:
+      - 8088:8088
+      - 8042:8042
+      - 10000:10000
+      - 9083:9083
+      - 50070:50070
+      - 5005:5005  
+    volumes:
+      - ~/bigdata/hadoop:/opt/bigdata/hadoop
+      - ./etc-debug/hadoop:/opt/bigdata/etc/hadoop
+      - ~/bigdata/hive:/opt/bigdata/hive
+      - ./etc-debug/hive:/opt/bigdata/etc/hive
+      - ./etc-debug/tez:/opt/bigdata/etc/tez
+      - ./env/bigdata_env:/etc/profile.d/bigdata_env
+      - ./app:/opt/app  

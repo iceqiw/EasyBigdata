@@ -1,0 +1,34 @@
+version: '3'
+services:
+  hadoop-master1:
+    image: hd-container:1.0
+    hostname: hadoop-master1
+    ports:
+      - 8088:8088
+      - 8042:8042
+      - 10000:10000
+      - 50070:50070
+    volumes:
+      - ~/bigdata/hadoop:/opt/bigdata/hadoop
+      - ./etc/hadoop:/opt/bigdata/etc/hadoop
+      - ~/bigdata/hive:/opt/bigdata/hive
+      - ./etc/hive:/opt/bigdata/etc/hive
+      - ./env/bigdata_env:/etc/profile.d/bigdata_env
+  hadoop-slave1:
+    image: hd-container:1.0
+    hostname: hadoop-slave1
+    ports:
+      - 8043:8042
+    volumes:
+      - ~/bigdata/hadoop:/opt/bigdata/hadoop
+      - ./etc/hadoop:/opt/bigdata/etc/hadoop
+      - ./env/bigdata_env:/etc/profile.d/bigdata_env
+  hadoop-slave2:
+    image: hd-container:1.0
+    hostname: hadoop-slave2
+    ports:
+      - 8044:8042
+    volumes:
+      - ~/bigdata/hadoop:/opt/bigdata/hadoop
+      - ./etc/hadoop:/opt/bigdata/etc/hadoop
+      - ./env/bigdata_env:/etc/profile.d/bigdata_env

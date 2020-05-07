@@ -1,0 +1,40 @@
+version: '3'
+services:
+  hadoop-master1:
+    image: hd-container:1.0
+    hostname: hadoop-master1
+    ports:
+      - 2181:2181
+      - 9092:9092      
+      - 9000:9000
+    volumes:
+      - ~/bigdata/zookeeper:/opt/bigdata/zookeeper
+      - ./etc/zookeeper:/opt/bigdata/etc/zookeeper
+      - ~/bigdata/kafka:/opt/bigdata/kafka
+      - ~/bigdata/kafka-manager:/opt/bigdata/kafka-manager
+      - ./etc/kafka:/opt/bigdata/etc/kafka
+      - ./env/bigdata_env:/etc/profile.d/bigdata_env
+  hadoop-slave1:
+    image: hd-container:1.0
+    hostname: hadoop-slave1
+    ports:
+      - 2182:2181
+      - 9093:9092
+    volumes:
+      - ~/bigdata/zookeeper:/opt/bigdata/zookeeper
+      - ./etc/zookeeper:/opt/bigdata/etc/zookeeper
+      - ~/bigdata/kafka:/opt/bigdata/kafka
+      - ./etc/kafka:/opt/bigdata/etc/kafka
+      - ./env/bigdata_env:/etc/profile.d/bigdata_env
+  hadoop-slave2:
+    image: hd-container:1.0
+    hostname: hadoop-slave2
+    ports:
+      - 2183:2181
+      - 9094:9092
+    volumes:
+      - ~/bigdata/zookeeper:/opt/bigdata/zookeeper
+      - ./etc/zookeeper:/opt/bigdata/etc/zookeeper
+      - ~/bigdata/kafka:/opt/bigdata/kafka
+      - ./etc/kafka:/opt/bigdata/etc/kafka
+      - ./env/bigdata_env:/etc/profile.d/bigdata_env
