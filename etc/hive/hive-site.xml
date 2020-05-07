@@ -36,11 +36,11 @@
     </property>
     <property>
         <name>hive.server2.authentication.kerberos.principal</name>
-        <value>hdfs/hadoop@HADOOP.COM</value>
+        <value>hive/hadoop@HADOOP.COM</value>
     </property>
     <property>
         <name>hive.server2.authentication.kerberos.keytab</name>
-        <value>/opt/bigdata/hdfs.keytab</value>
+        <value>/opt/bigdata/hive.keytab</value>
     </property>
     <property>
         <name>hive.metastore.sasl.enabled</name>
@@ -48,10 +48,10 @@
     </property>
     <property>
         <name>hive.metastore.kerberos.keytab.file</name>
-        <value>/opt/bigdata/hdfs.keytab</value>
+        <value>/opt/bigdata/hive.keytab</value>
     </property>
     <property>
         <name>hive.metastore.kerberos.principal</name>
-        <value>hdfs/hadoop@HADOOP.COM</value>
+        <value>hive/hadoop@HADOOP.COM</value>
     </property>
 </configuration>
