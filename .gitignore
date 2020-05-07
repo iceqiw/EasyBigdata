@@ -4,3 +4,4 @@
 *.jar
 build-env/app/*
 etc/hadoop
+etc/hive
