@@ -31,4 +31,12 @@
         <name>hadoop.proxyuser.tw.groups</name>
         <value>*</value>
     </property>
+    <property>
+        <name>hadoop.proxyuser.hdp.hosts</name>
+        <value>*</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.hdp.groups</name>
+        <value>*</value>
+    </property>
 </configuration>

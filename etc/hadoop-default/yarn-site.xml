@@ -9,7 +9,7 @@
     </property>
     <property>
         <name>yarn.nodemanager.resource.memory-mb</name>
-        <value>8192</value>
+        <value>4096</value>
     </property>
     <property>
         <name>yarn.nodemanager.vmem-check-enabled</name>
@@ -18,5 +18,9 @@
     <property>
         <name>yarn.nodemanager.resource.cpu-vcores</name>
         <value>4</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.scheduler.address</name>
+        <value>hadoop-master1:8099</value>
     </property>
 </configuration>
