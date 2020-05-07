@@ -1,0 +1,12 @@
+version: '3'
+services:
+  kdc:
+    image: kdc:1.0
+    hostname: kdc
+    privileged: true
+    ports:
+      - 188:88
+      - 749:749
+      - 750:750
+    volumes:
+      - ./apps:/opt/apps

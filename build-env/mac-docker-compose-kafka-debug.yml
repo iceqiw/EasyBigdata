@@ -9,8 +9,8 @@ services:
       - 5005:5005
       - 5006:5006
     volumes:
-      - ~/bigdata/zookeeper:/opt/bigdata/zookeeper
+      - ./apps/bigdata/zookeeper:/opt/bigdata/zookeeper
       - ./etc-debug/zookeeper:/opt/bigdata/etc/zookeeper
-      - ~/bigdata/kafka:/opt/bigdata/kafka
+      - ./apps/bigdata/kafka:/opt/bigdata/kafka
       - ./etc-debug/kafka:/opt/bigdata/etc/kafka
       - ./env/bigdata_env:/etc/profile.d/bigdata_env

@@ -8,7 +8,7 @@ services:
       - 8042:8042
       - 50070:50070
     volumes:
-      - ~/bigdata/hadoop:/opt/bigdata/hadoop
+      - ./apps/bigdata/hadoop:/opt/bigdata/hadoop
       - ./etc/hadoop:/opt/bigdata/etc/hadoop
       - ./env/bigdata_env:/etc/profile.d/bigdata_env
   hadoop-slave1:
@@ -17,7 +17,7 @@ services:
     ports:
       - 8043:8042
     volumes:
-      - ~/bigdata/hadoop:/opt/bigdata/hadoop
+      - ./apps/bigdata/hadoop:/opt/bigdata/hadoop
       - ./etc/hadoop:/opt/bigdata/etc/hadoop
       - ./env/bigdata_env:/etc/profile.d/bigdata_env
   hadoop-slave2:
@@ -26,6 +26,6 @@ services:
     ports:
       - 8044:8042
     volumes:
-      - ~/bigdata/hadoop:/opt/bigdata/hadoop
+      - ./apps/bigdata/hadoop:/opt/bigdata/hadoop
       - ./etc/hadoop:/opt/bigdata/etc/hadoop
       - ./env/bigdata_env:/etc/profile.d/bigdata_env

@@ -10,13 +10,13 @@ services:
       - 50070:50070
       - 2181:2181
     volumes:
-      - ~/bigdata/hadoop:/opt/bigdata/hadoop
+      - ./apps/bigdata/hadoop:/opt/bigdata/hadoop
       - ./etc/hadoop:/opt/bigdata/etc/hadoop
-      - ~/bigdata/hbase:/opt/bigdata/hbase
+      - ./apps/bigdata/hbase:/opt/bigdata/hbase
       - ./etc/hbase:/opt/bigdata/etc/hbase
-      - ~/bigdata/zookeeper:/opt/bigdata/zookeeper
+      - ./apps/bigdata/zookeeper:/opt/bigdata/zookeeper
       - ./etc/zookeeper:/opt/bigdata/etc/zookeeper
-      - ./env/bigdata_env.:/etc/profile.d/bigdata_env.
+      - ./env/bigdata_env:/etc/profile.d/bigdata_env
   hadoop-slave1:
     image: hd-container:1.0
     hostname: hadoop-slave1
@@ -24,13 +24,13 @@ services:
       - 8043:8042
       - 2182:2181
     volumes:
-      - ~/bigdata/hadoop:/opt/bigdata/hadoop
+      - ./apps/bigdata/hadoop:/opt/bigdata/hadoop
       - ./etc/hadoop:/opt/bigdata/etc/hadoop
-      - ~/bigdata/hbase:/opt/bigdata/hbase
+      - ./apps/bigdata/hbase:/opt/bigdata/hbase
       - ./etc/hbase:/opt/bigdata/etc/hbase
-      - ~/bigdata/zookeeper:/opt/bigdata/zookeeper
+      - ./apps/bigdata/zookeeper:/opt/bigdata/zookeeper
       - ./etc/zookeeper:/opt/bigdata/etc/zookeeper
-      - ./env/bigdata_env.:/etc/profile.d/bigdata_env.
+      - ./env/bigdata_env:/etc/profile.d/bigdata_env
   hadoop-slave2:
     image: hd-container:1.0
     hostname: hadoop-slave2
@@ -38,10 +38,10 @@ services:
       - 8044:8042
       - 2183:2181
     volumes:
-      - ~/bigdata/hadoop:/opt/bigdata/hadoop
+      - ./apps/bigdata/hadoop:/opt/bigdata/hadoop
       - ./etc/hadoop:/opt/bigdata/etc/hadoop
-      - ~/bigdata/hbase:/opt/bigdata/hbase
+      - ./apps/bigdata/hbase:/opt/bigdata/hbase
       - ./etc/hbase:/opt/bigdata/etc/hbase
-      - ~/bigdata/zookeeper:/opt/bigdata/zookeeper
+      - ./apps/bigdata/zookeeper:/opt/bigdata/zookeeper
       - ./etc/zookeeper:/opt/bigdata/etc/zookeeper
-      - ./env/bigdata_env.:/etc/profile.d/bigdata_env.
+      - ./env/bigdata_env:/etc/profile.d/bigdata_env

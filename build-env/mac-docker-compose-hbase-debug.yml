@@ -10,10 +10,10 @@ services:
       - 50070:50070
       - 2181:2181
     volumes:
-      - ~/bigdata/hadoop:/opt/bigdata/hadoop
+      - ./apps/bigdata/hadoop:/opt/bigdata/hadoop
       - ./etc-debug/hadoop:/opt/bigdata/etc/hadoop
-      - ~/bigdata/hbase:/opt/bigdata/hbase
+      - ./apps/bigdata/hbase:/opt/bigdata/hbase
       - ./etc-debug/hbase:/opt/bigdata/etc/hbase
-      - ~/bigdata/zookeeper:/opt/bigdata/zookeeper
+      - ./apps/bigdata/zookeeper:/opt/bigdata/zookeeper
       - ./etc-debug/zookeeper:/opt/bigdata/etc/zookeeper
       - ./env/bigdata_env:/etc/profile.d/bigdata_env

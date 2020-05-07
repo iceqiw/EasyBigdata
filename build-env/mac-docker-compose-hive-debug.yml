@@ -11,10 +11,18 @@ services:
       - 50070:50070
       - 5005:5005  
     volumes:
-      - ~/bigdata/hadoop:/opt/bigdata/hadoop
+      - ./apps/bigdata/hadoop:/opt/bigdata/hadoop
       - ./etc-debug/hadoop:/opt/bigdata/etc/hadoop
-      - ~/bigdata/hive:/opt/bigdata/hive
+      - ./apps/bigdata/hive:/opt/bigdata/hive
       - ./etc-debug/hive:/opt/bigdata/etc/hive
       - ./etc-debug/tez:/opt/bigdata/etc/tez
       - ./env/bigdata_env:/etc/profile.d/bigdata_env
-      - ./app:/opt/app  
+  mysql1:
+    environment:
+        MYSQL_ROOT_PASSWORD: "123456"
+        MYSQL_USER: 'hive'
+        MYSQL_PASS: '123456'
+    image: "mysql:5.7"
+    restart: always
+    ports:
+        - "3306:3306"
