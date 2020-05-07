@@ -3,3 +3,4 @@
 .idea
 *.jar
 build-env/app/*
+etc/hadoop

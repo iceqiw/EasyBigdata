@@ -93,6 +93,29 @@ fi
 
 
 
+### E.g:链接hadoop(hive,spark) 配置
+
+```
+├── alluxio
+├── alluxio-cli
+├── hadoop -> /Users/tw/workspace/bigdata-docker/etc/hadoop-security
+├── hadoop-cli
+├── hadoop-default
+├── hadoop-for-nm
+├── hadoop-ha
+├── hadoop-security
+├── hadoop-security-cli
+├── hbase
+├── hive
+├── kafka
+├── kerberos
+├── tez
+├── zeppelin
+└── zookeeper
+```
+
+
+
 ## 初始化
 
 - 环境变量
