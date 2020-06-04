@@ -195,8 +195,8 @@ function debug_nm() {
 
 function debug_router() {
   jps | grep Router | awk '{print $1}' | xargs kill -9
-  export HADOOP_OPTS="$HADOOP_OPTS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
-  yarn --daemon start router
+  export HADOOP_OPTS="$HADOOP_OPTS -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005"
+  yarn --config etc/hadoop-router --daemon start router
   unset HADOOP_OPTS
 }
 

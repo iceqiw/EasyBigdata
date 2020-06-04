@@ -24,8 +24,10 @@
         <value>hadoop-master1:8099</value>
     </property>
 
-    <!--federation rm-->
-    <!-- <property>
+
+
+
+    <property>
         <name>yarn.federation.enabled</name>
         <value>true</value>
     </property>
@@ -42,9 +44,15 @@
         <value>hadoop-master1:2181</value>
     </property>
     <property>
-        <name>yarn.resourcemanager.epoch</name>
-        <value>11</value>
-    </property> -->
-    <!--federation-->
-
+        <name>yarn.federation.policy-manager</name>
+        <value>org.apache.hadoop.yarn.server.federation.policies.manager.QueuePolicyManager</value>
+    </property>
+    <property>
+        <name>yarn.router.clientrm.interceptor-class.pipeline</name>
+        <value>org.apache.hadoop.yarn.server.router.clientrm.FederationClientInterceptor</value>
+    </property>
+    <property>
+        <name>yarn.federation.cache-ttl.secs</name>
+        <value>0</value>
+    </property>
 </configuration>
