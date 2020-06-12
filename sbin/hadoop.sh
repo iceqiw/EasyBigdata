@@ -205,6 +205,13 @@ function yarn_start_fer_rm() {
   jps | grep ResourceManager | awk '{print $1}' | xargs kill -9
   yarn --config etc/hadoop-federation-rm --daemon start resourcemanager
 }
+
+function yarn_start_fer_nm() {
+  echo 'start yarn rm federtion server'
+  jps | grep NodeManager | awk '{print $1}' | xargs kill -9
+  yarn --config etc/hadoop-federation-nm --daemon start nodemanager
+}
+
 function replace_job_xml() {
   echo "/tmp/hadoop-yarn/staging/tw/.staging/$1"
   hdfs dfs -ls /tmp/hadoop-yarn/staging/tw/.staging/$1
