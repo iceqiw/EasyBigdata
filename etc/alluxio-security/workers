@@ -10,4 +10,4 @@
 #
 
 # An Alluxio Worker will be started on each of the machines listed below.
-localhost
+hadoop-master1

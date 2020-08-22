@@ -22,18 +22,18 @@
     <!--kerberos-->
     <property>
         <name>yarn.resourcemanager.keytab</name>
-        <value>/opt/bigdata/yarn.keytab</value>
+        <value>/opt/bigdata/hd.keytab</value>
     </property>
     <property>
         <name>yarn.resourcemanager.principal</name>
-        <value>yarn/hadoop@HADOOP.COM</value>
+        <value>hd/hadoop@HADOOP.COM</value>
     </property>
     <property>
         <name>yarn.nodemanager.keytab</name>
-        <value>/opt/bigdata/yarn.keytab</value>
+        <value>/opt/bigdata/hd.keytab</value>
     </property>
     <property>
         <name>yarn.nodemanager.principal</name>
-        <value>yarn/hadoop@HADOOP.COM</value>
+        <value>hd/hadoop@HADOOP.COM</value>
     </property>
 </configuration>

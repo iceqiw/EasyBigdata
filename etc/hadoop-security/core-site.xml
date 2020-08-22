@@ -57,4 +57,18 @@
         <value>true</value>
     </property>
     <!-- kerberos -->
+    <!--alluxio-->
+    <property>
+        <name>fs.alluxio.impl</name>
+        <value>alluxio.hadoop.FileSystem</value>
+        <description>The Alluxio FileSystem</description>
+    </property>
+    <property>
+        <name>alluxio.user.conf.cluster.default.enabled</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>alluxio.security.authorization.capability.enabled	</name>
+        <value>false</value>
+    </property>
 </configuration>

@@ -5,3 +5,4 @@
 build-env/app/*
 etc/hadoop
 etc/hive
+etc/alluxio

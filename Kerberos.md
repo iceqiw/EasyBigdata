@@ -111,14 +111,14 @@ kinit qiwei/admin
 
 addprinc qiwei/admin
 
-addprinc -randkey hdfs/hadoop-master1@HADOOP.COM
-addprinc -randkey HTTP/hadoop-master1@HADOOP.COM
-xst -k hdfs.keytab hdfs/hadoop-master1@HADOOP.COM
-xst -k HTTP.keytab HTTP/hadoop-master1@HADOOP.COM
+addprinc -randkey hd/hadoop@HADOOP.COM
+xst -k hd.keytab hd/hadoop@HADOOP.COM
 
+addprinc -randkey hd/hadoop-master1@HADOOP.COM
+xst -k hd.keytab hd/hadoop-master1@HADOOP.COM
 
-addprinc -randkey test/hadoop-master1@HADOOP.COM
-xst -k test.keytab test/hadoop-master1@HADOOP.COM
+addprinc -randkey alluxio/hadoop-master1@HADOOP.COM
+xst -k alluxio.keytab alluxio/hadoop-master1@HADOOP.COM
 
 ktutil
 rkt hdfs.keytab    
@@ -139,4 +139,4 @@ https://www.jianshu.com/p/7e839226a200
 
 https://www.jianshu.com/p/f84c3668272b
 
-https://blog.csdn.net/lovebomei/article/details/80007631
+https://blog.csdn.net/lovebomei/article/details/80007631d

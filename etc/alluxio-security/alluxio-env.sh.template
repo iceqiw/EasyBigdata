@@ -24,10 +24,18 @@
 
 # The directory where log files are stored. (Default: ${ALLUXIO_HOME}/logs).
 # ALLUXIO_LOGS_DIR
+
+# The hostname for log server. If set, remote logging is enabled.
+# ALLUXIO_LOGSERVER_HOSTNAME
+# If remote logging is enabled, the port for log server. (Default: 45600)
+# ALLUXIO_LOGSERVER_PORT
+# If remote logging is enabled, the directory where log server log files are stored. (Default: ${ALLUXIO_HOME}/logs)
+# ALLUXIO_LOGSERVER_LOGS_DIR
+
 # Config properties set for Alluxio master, worker and shell. (Default: "")
 # E.g. "-Dalluxio.master.rpc.port=39999"
 # ALLUXIO_JAVA_OPTS
-ALLUXIO_JAVA_OPTS="$ALLUXIO_JAVA_OPTS -Djava.security.krb5.conf=/opt/bigdata/etc/kerberos/krb5.conf"
+
 # Config properties set for Alluxio master daemon. (Default: "")
 # E.g. "-Dalluxio.master.rpc.port=39999"
 # ALLUXIO_MASTER_JAVA_OPTS
@@ -35,6 +43,10 @@ ALLUXIO_JAVA_OPTS="$ALLUXIO_JAVA_OPTS -Djava.security.krb5.conf=/opt/bigdata/etc
 # Config properties set for Alluxio worker daemon. (Default: "")
 # E.g. "-Dalluxio.worker.rpc.port=49999" to set worker port, "-Xms2048M -Xmx2048M" to limit the heap size of worker.
 # ALLUXIO_WORKER_JAVA_OPTS
+
+# Config properties set for Alluxio proxy daemon. (Default: "")
+# E.g. "-Xms2048M -Xmx2048M" to limit the heap size of proxy.
+# ALLUXIO_PROXY_JAVA_OPTS
 
 # Config properties set for Alluxio shell. (Default: "")
 # E.g. "-Dalluxio.user.file.writetype.default=CACHE_THROUGH"
