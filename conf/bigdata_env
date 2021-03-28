@@ -1,7 +1,7 @@
 #!/bin/bash
 export BIGDATAHOME=/opt/bigdata
 export BIGDATA_CONF=$BIGDATAHOME/etc
-export BIGDATA_LOG=$BIGDATAHOME/logs
+export BIGDATA_LOG=/var/bigdata/logs
 export JAVA_HOME=$BIGDATAHOME/java
 export PATH=$JAVA_HOME/bin:$PATH
 
