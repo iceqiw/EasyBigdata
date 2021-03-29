@@ -2,17 +2,15 @@
 export BIGDATAHOME=/opt/bigdata
 export BIGDATA_CONF=$BIGDATAHOME/etc
 export BIGDATA_LOG=/var/bigdata/logs
-export JAVA_HOME=$BIGDATAHOME/java
-export PATH=$JAVA_HOME/bin:$PATH
 
 if [[ -d "$BIGDATAHOME/hadoop" ]]; then
   export HADOOP_HOME=$BIGDATAHOME/hadoop
-  source $BIGDATAHOME/sbin/hadoop.sh
+  source $BIGDATAHOME/script/hadoop.sh
 fi
 
 if [[ -d "$BIGDATAHOME/hive" ]]; then
   export HIVE_HOME=$BIGDATAHOME/hive
-  source $BIGDATAHOME/sbin/hive.sh
+  source $BIGDATAHOME/script/hive.sh
 fi
 
 if [[ -d "$BIGDATAHOME/tez" ]]; then
@@ -23,7 +21,7 @@ fi
 
 if [[ -d "$BIGDATAHOME/zookeeper" ]]; then
   export ZOO_HOME=$BIGDATAHOME/zookeeper
-  source $BIGDATAHOME/sbin/zookeeper.sh
+  source $BIGDATAHOME/script/zookeeper.sh
 fi
 
 if [[ -d "$BIGDATAHOME/hbase" ]]; then
@@ -40,7 +38,7 @@ fi
 
 if [[ -d "$BIGDATAHOME/alluxio" ]]; then
   export ALLUXIO_HOME=$BIGDATAHOME/alluxio
-  source $BIGDATAHOME/sbin/alluxio.sh
+  source $BIGDATAHOME/script/alluxio.sh
 fi
 
 if [[ -d "$BIGDATAHOME/spark" ]]; then
@@ -53,6 +51,8 @@ if [[ -n $HADOOP_HOME ]]; then
 
   export HADOOP_CONF_DIR=$BIGDATA_CONF/hadoop
   export HADOOP_LOG_DIR=$BIGDATA_LOG/hadoop
+  export YARN_CONF_DIR=$BIGDATA_CONF/hadoop
+  export YARN_LOG_DIR=$BIGDATA_LOG/hadoop
 fi
 
 if [[ -n $ALLUXIO_HOME ]]; then

@@ -1,0 +1,22 @@
+version: '3'
+services:
+  bd-master:
+    image: bigdata:1.0
+    hostname: bd-master-1
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+    ports:
+      - 8088:8088
+      - 8042:8042
+      - 50070:50070
+    volumes:
+      - /opt/bigdata/hadoop:/opt/bigdata/hadoop
+      - /opt/bigdata/etc/hadoop:/opt/bigdata/etc/hadoop
+      - /opt/bigdata/script:/opt/bigdata/script
+      - /opt/bigdata/bigdata.sh:/etc/profile.d/bigdata.sh
