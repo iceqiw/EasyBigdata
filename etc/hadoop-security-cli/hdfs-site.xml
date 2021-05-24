@@ -1,0 +1,20 @@
+<configuration>
+    <property>
+        <name>dfs.name.dir</name>
+        <value>/opt/bigdata/data/hadoop/hdfs/name</value>
+    </property>
+    <property>
+        <name>dfs.data.dir</name>
+        <value>/opt/bigdata/data/hadoop/hdfs/data</value>
+    </property>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+    <property>
+        <name>dfs.http.address</name>
+        <value>0.0.0.0:50070</value>
+    </property>
+    
+    <!-- kerberos -->
+</configuration>
