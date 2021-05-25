@@ -17,7 +17,7 @@
     </property>
     <property>
         <name>yarn.resourcemanager.scheduler.address</name>
-        <value>hadoop-master1:8099</value>
+        <value>bd-master-1:8099</value>
     </property>
     <!-- proxy-->
     <property>

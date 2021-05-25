@@ -23,7 +23,7 @@
     </property>
     <property>
         <name>hive.metastore.uris</name>
-        <value>thrift://hadoop-master1:9083</value>
+        <value>thrift://bd-master-1:9083</value>
     </property>
     <property>
         <name>hive.metastore.warehouse.dir</name>

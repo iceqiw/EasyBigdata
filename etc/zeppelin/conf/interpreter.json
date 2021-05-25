@@ -7,7 +7,7 @@
       "properties": {
         "default.url": {
           "name": "default.url",
-          "value": "jdbc:hive2://hadoop-master1:10000/default",
+          "value": "jdbc:hive2://bd-master-1:10000/default",
           "type": "string"
         },
         "default.driver": {

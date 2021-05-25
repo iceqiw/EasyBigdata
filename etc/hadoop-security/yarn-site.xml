@@ -1,7 +1,7 @@
 <configuration>
     <property>
         <name>yarn.resourcemanager.hostname</name>
-        <value>hadoop-master1</value>
+        <value>bd-master-1</value>
     </property>
     <property>
         <name>yarn.nodemanager.aux-services</name>

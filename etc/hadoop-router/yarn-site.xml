@@ -1,7 +1,7 @@
 <configuration>
     <property>
         <name>yarn.resourcemanager.hostname</name>
-        <value>hadoop-master1</value>
+        <value>bd-master-1</value>
     </property>
     <property>
         <name>yarn.nodemanager.aux-services</name>
@@ -21,7 +21,7 @@
     </property>
     <property>
         <name>yarn.resourcemanager.scheduler.address</name>
-        <value>hadoop-master1:8099</value>
+        <value>bd-master-1:8099</value>
     </property>
 
 
@@ -41,7 +41,7 @@
     </property>
     <property>
         <name>hadoop.zk.address</name>
-        <value>hadoop-master1:2181</value>
+        <value>bd-master-1:2181</value>
     </property>
     <property>
         <name>yarn.federation.policy-manager</name>

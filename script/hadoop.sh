@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function vaild_host() {
-    if [[ $(grep -c hadoop-master1 /etc/hosts) -eq 0 ]]; then
+    if [[ $(grep -c bd-master-1 /etc/hosts) -eq 0 ]]; then
         echo 'need to edit etc hosts'
         return 0
     else
@@ -216,6 +216,6 @@ function replace_job_xml() {
     echo "/tmp/hadoop-yarn/staging/tw/.staging/$1"
     hdfs dfs -ls /tmp/hadoop-yarn/staging/tw/.staging/$1
     hdfs dfs -get /tmp/hadoop-yarn/staging/tw/.staging/$1 $1
-    sed -i "" 's/${yarn.resourcemanager.hostname}:8030/hadoop-master1:8049/g' $1/job.xml
+    sed -i "" 's/${yarn.resourcemanager.hostname}:8030/bd-master-1:8049/g' $1/job.xml
     hdfs dfs -put -f -p $1 /tmp/hadoop-yarn/staging/tw/.staging/
 }

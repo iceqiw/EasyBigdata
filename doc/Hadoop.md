@@ -1,19 +1,22 @@
-# 验证启动
-  访问 http://localhost:50070
+## 部署节点
+
+|        bd-master-1         | hadoop-slave1 | hadoop-slave2 |
+| :------------------------: | :-----------: | :-----------: |
+|     namenode,datanode      |   datanode    |   datanode    |
+| resoursemanager,nodemanger |  nodemanger   |  nodemanger   |
 
 ## hadoop 启动命令
 
-```shell
-hdfs namenode -format #格式化 namenode
+`hdfs namenode -format` 格式化 namenode
 
-hdfs --daemon start namenode #启动 namenode
+`hdfs --daemon start namenode` 启动 namenode
 
-hdfs --daemon start datanode #启动 datanode
+`hdfs --daemon start datanode` 启动 datanode
 
-yarn --daemon start resourcemanager #启动 resourcemanager
+`yarn --daemon start resourcemanager` 启动 resourcemanager
 
-yarn --daemon start nodemanager #启动 nodemanager
-```
+`yarn --daemon start nodemanager` 启动 nodemanager
+
 ## 流程：
 
 1.格式化 namenode
@@ -37,7 +40,7 @@ yarn --daemon start resourcemanager
 hdfs --daemon start datanode
 yarn --daemon start nodemanager
 ```
-# waiting for update
+
 ## HA 配置
 
 **添加 hosts ip hadoop-master2**
@@ -85,39 +88,39 @@ yarn --daemon start nodemanager
 
 ```xml
     <!--federation-->
-<property>
-    <name>yarn.resourcemanager.epoch</name>
-    <value>1</value>
-</property>
-<property>
-<name>yarn.federation.enabled</name>
-<value>true</value>
-</property>
-<property>
-<name>yarn.resourcemanager.cluster-id</name>
-<value>cluster1</value>
-</property>
-<property>
-<name>yarn.federation.state-store.class</name>
-<value>org.apache.hadoop.yarn.server.federation.store.impl.ZookeeperFederationStateStore</value>
-</property>
-<property>
-<name>yarn.router.bind-host</name>
-<value>0.0.0.0</value>
-</property>
-<property>
-<name>yarn.router.clientrm.interceptor-class.pipeline</name>
-<value>org.apache.hadoop.yarn.server.router.clientrm.FederationClientInterceptor</value>
-</property>
-<property>
-<name>yarn.nodemanager.amrmproxy.enabled</name>
-<value>true</value>
-</property>
-<property>
-<name>yarn.nodemanager.amrmproxy.interceptor-class.pipeline</name>
-<value>org.apache.hadoop.yarn.server.nodemanager.amrmproxy.FederationInterceptor</value>
-</property>
-        <!--federation end-->
+    <property>
+        <name>yarn.resourcemanager.epoch</name>
+        <value>1</value>
+    </property>
+    <property>
+        <name>yarn.federation.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.cluster-id</name>
+        <value>cluster1</value>
+    </property>
+    <property>
+        <name>yarn.federation.state-store.class</name>
+        <value>org.apache.hadoop.yarn.server.federation.store.impl.ZookeeperFederationStateStore</value>
+    </property>
+    <property>
+        <name>yarn.router.bind-host</name>
+        <value>0.0.0.0</value>
+    </property>
+    <property>
+        <name>yarn.router.clientrm.interceptor-class.pipeline</name>
+        <value>org.apache.hadoop.yarn.server.router.clientrm.FederationClientInterceptor</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.amrmproxy.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.amrmproxy.interceptor-class.pipeline</name>
+        <value>org.apache.hadoop.yarn.server.nodemanager.amrmproxy.FederationInterceptor</value>
+    </property>
+    <!--federation end-->
 ```
 
 - 客户端

@@ -1,20 +1,22 @@
 ## 部署
 
-参考Hadoop，kafka部署，启动hadoop，zk
+参考 Hadoop，kafka 部署，启动 hadoop，zk
 
-|       hadoop-master1       | hadoop-slave1 | hadoop-slave2 |
-|:--------------------------:|:-------------:|:-------------:|
+|        bd-master-1         | hadoop-slave1 | hadoop-slave2 |
+| :------------------------: | :-----------: | :-----------: |
 |     namenode,datanode      |   datanode    |   datanode    |
 | resoursemanager,nodemanger |  nodemanger   |  nodemanger   |
-|   HMaster,regionserver    |     regionserver |    regionserver     |       
-|   zk    |     zk |    zk     |
+|    HMaster,regionserver    | regionserver  | regionserver  |
+|             zk             |      zk       |      zk       |
 
-## 初始化 
+## 初始化
 
 ```
 none
 ```
+
 ## 启动
+
 ```
 #1 start hmaster (master node)
 hbase-daemon.sh start master

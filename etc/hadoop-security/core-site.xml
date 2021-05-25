@@ -1,7 +1,7 @@
 <configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://hadoop-master1:9000</value>
+        <value>hdfs://bd-master-1:9000</value>
     </property>
     <property>
         <name>hadoop.tmp.dir</name>

@@ -34,7 +34,7 @@
     </property>
     <property>
         <name>yarn.resourcemanager.hostname.rm1</name>
-        <value>hadoop-master1</value>
+        <value>bd-master-1</value>
     </property>
     <property>
         <name>yarn.resourcemanager.hostname.rm2</name>
@@ -42,7 +42,7 @@
     </property>
     <property>
         <name>yarn.resourcemanager.webapp.address.rm1</name>
-        <value>hadoop-master1:8088</value>
+        <value>bd-master-1:8088</value>
     </property>
     <property>
         <name>yarn.resourcemanager.webapp.address.rm2</name>
@@ -50,7 +50,7 @@
     </property>
     <property>
         <name>hadoop.zk.address</name>
-        <value>hadoop-master1:2181</value>
+        <value>bd-master-1:2181</value>
     </property>
     <!--ha end-->
     <!--federation-->

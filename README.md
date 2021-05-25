@@ -23,7 +23,7 @@ volumes:
 ## 构建集群运行环境命令e.g
 
 ```
-docker-compose -f mac-docker-compose-hadoop.yml up -d
+docker-compose -f docker-compose-hadoop.yml up -d
 ```
 ## 修改环境变量bigdata-docker/build-env/env/bigdata_env.sh
 

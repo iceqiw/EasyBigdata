@@ -1,7 +1,7 @@
 <configuration>
     <property>
         <name>yarn.resourcemanager.address</name>
-        <value>hadoop-master1:8050</value>
+        <value>bd-master-1:8050</value>
     </property>
     <property>
         <name>yarn.resourcemanager.scheduler.address</name>

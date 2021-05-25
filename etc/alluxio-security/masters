@@ -18,4 +18,4 @@
 #
 # The multi-master Zookeeper HA mode requires that all the masters can access
 # the same journal through a shared medium (e.g. HDFS or NFS).
-hadoop-master1
+bd-master-1
