@@ -14,4 +14,4 @@ services:
       - /opt/bigdata/etc/hive:/opt/bigdata/etc/hive
       - /opt/bigdata/script:/opt/bigdata/script
       - /opt/bigdata/bigdata.sh:/etc/profile.d/bigdata.sh
-      - /opt/bigdata/exData.sh:/opt/bigdata/exData
+      - /opt/bigdata/exData:/opt/bigdata/exData
