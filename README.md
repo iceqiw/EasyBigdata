@@ -64,14 +64,12 @@ Kafka: Kafka.md
 ```shell
 # /opt/bigdata
 
-├── bigdata_env -> /home/qiwei/workspace/bigdata-docker/bigdata_env
-├── etc -> /home/qiwei/workspace/bigdata-docker/etc
+├── bigdata.sh -> /home/weiqi/Workspace/EasyBigdata/conf/bigdata.sh
+├── etc -> /home/weiqi/Workspace/EasyBigdata/etc
 ├── hadoop
 ├── hive
-├── java -> /home/qiwei/dev/jdk1.8.0_241
-├── sbin -> /home/qiwei/workspace/bigdata-docker/sbin
-├── tez
-└── tez-0.9.2-minimal.tar.gz
+└── script -> /home/weiqi/Workspace/EasyBigdata/script
+
 ```
 
 - 将Hive 安装包解压后重命名为hive
