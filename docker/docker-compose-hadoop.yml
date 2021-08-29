@@ -2,16 +2,17 @@ version: '3'
 services:
   bd-master:
     image: bigdata:1.0
+    build:
+      context: .
+      dockerfile: $PWD/docker/hd-env/Dockerfile
     hostname: bd-master-1
     ports:
       - 8088:8088
       - 8042:8042
       - 50070:50070
     volumes:
-      - /opt/bigdata/hadoop:/opt/bigdata/hadoop
-      - /opt/bigdata/etc/hadoop:/opt/bigdata/etc/hadoop
-      - /opt/bigdata/hive:/opt/bigdata/hive
-      - /opt/bigdata/etc/hive:/opt/bigdata/etc/hive
-      - /opt/bigdata/script:/opt/bigdata/script
-      - /opt/bigdata/bigdata.sh:/etc/profile.d/bigdata.sh
-      - /opt/bigdata/exData:/opt/bigdata/exData
+      - $PWD/conf/bigdata.sh:/etc/profile.d/bigdata.sh
+      - $PWD/installPkg/hadoop:/opt/bigdata/hadoop
+      - $PWD/etc/hadoop:/opt/bigdata/etc/hadoop
+      - $PWD/script:/opt/bigdata/script
+      - $PWD/exData:/opt/bigdata/exData
