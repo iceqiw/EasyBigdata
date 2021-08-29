@@ -1,48 +1,48 @@
 #!/bin/bash
-export BIGDATAHOME=/opt/bigdata
-export BIGDATA_CONF=$BIGDATAHOME/etc
-export BIGDATA_LOG=/var/bigdata/logs
+export BIGDATA_HOME=/opt/bigdata
+export BIGDATA_CONF=$BIGDATA_HOME/etc
+export BIGDATA_LOG=/opt/bigdata/logs
 
-if [[ -d "$BIGDATAHOME/hadoop" ]]; then
-  export HADOOP_HOME=$BIGDATAHOME/hadoop
-  source $BIGDATAHOME/script/hadoop.sh
+if [[ -d "$BIGDATA_HOME/hadoop" ]]; then
+  export HADOOP_HOME=$BIGDATA_HOME/hadoop
+  source $BIGDATA_HOME/script/hadoop.sh
 fi
 
-if [[ -d "$BIGDATAHOME/hive" ]]; then
-  export HIVE_HOME=$BIGDATAHOME/hive
-  source $BIGDATAHOME/script/hive.sh
+if [[ -d "$BIGDATA_HOME/hive" ]]; then
+  export HIVE_HOME=$BIGDATA_HOME/hive
+  source $BIGDATA_HOME/script/hive.sh
 fi
 
-if [[ -d "$BIGDATAHOME/tez" ]]; then
+if [[ -d "$BIGDATA_HOME/tez" ]]; then
   export TEZ_CONF_DIR=$BIGDATA_CONF/tez
-  export TEZ_JARS=$BIGDATAHOME/tez
+  export TEZ_JARS=$BIGDATA_HOME/tez
   export HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}/*:${TEZ_JARS}/lib/*
 fi
 
-if [[ -d "$BIGDATAHOME/zookeeper" ]]; then
-  export ZOO_HOME=$BIGDATAHOME/zookeeper
-  source $BIGDATAHOME/script/zookeeper.sh
+if [[ -d "$BIGDATA_HOME/zookeeper" ]]; then
+  export ZOO_HOME=$BIGDATA_HOME/zookeeper
+  source $BIGDATA_HOME/script/zookeeper.sh
 fi
 
-if [[ -d "$BIGDATAHOME/hbase" ]]; then
-  export HBASE_HOME=$BIGDATAHOME/hbase
+if [[ -d "$BIGDATA_HOME/hbase" ]]; then
+  export HBASE_HOME=$BIGDATA_HOME/hbase
 fi
 
-if [[ -d "$BIGDATAHOME/kafka" ]]; then
-  export KAFKA_HOME=$BIGDATAHOME/kafka
+if [[ -d "$BIGDATA_HOME/kafka" ]]; then
+  export KAFKA_HOME=$BIGDATA_HOME/kafka
 fi
 
-if [[ -d "$BIGDATAHOME/kafka-manager" ]]; then
-  export KAFKA_MANAGER_HOME=$BIGDATAHOME/kafka-manager
+if [[ -d "$BIGDATA_HOME/kafka-manager" ]]; then
+  export KAFKA_MANAGER_HOME=$BIGDATA_HOME/kafka-manager
 fi
 
-if [[ -d "$BIGDATAHOME/alluxio" ]]; then
-  export ALLUXIO_HOME=$BIGDATAHOME/alluxio
-  source $BIGDATAHOME/script/alluxio.sh
+if [[ -d "$BIGDATA_HOME/alluxio" ]]; then
+  export ALLUXIO_HOME=$BIGDATA_HOME/alluxio
+  source $BIGDATA_HOME/script/alluxio.sh
 fi
 
-if [[ -d "$BIGDATAHOME/spark" ]]; then
-  export SPARK_HOME=$BIGDATAHOME/spark
+if [[ -d "$BIGDATA_HOME/spark" ]]; then
+  export SPARK_HOME=$BIGDATA_HOME/spark
 fi
 
 if [[ -n $HADOOP_HOME ]]; then

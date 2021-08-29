@@ -11,6 +11,7 @@ function vaild_host() {
 
 function init_hdfs() {
     echo "hdfs init start"
+
     hdfs namenode -format
 }
 
