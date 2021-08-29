@@ -1,9 +1,6 @@
 *.tar.gz
 .DS_Store
 .idea
-*.jar
-build-env/app/*
-etc/hadoop
-etc/hive
+etc/**
 installPkg/**
 exData/**
