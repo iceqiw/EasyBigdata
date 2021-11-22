@@ -22,5 +22,10 @@
     <property>
         <name>yarn.resourcemanager.scheduler.address</name>
         <value>hadoop-master1:8099</value>
+    </property>    
+    <property>
+        <name>yarn.web-proxy.address</name>
+        <value>hadoop-master1:18088</value>
     </property>
+
 </configuration>
