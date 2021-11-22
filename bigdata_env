@@ -1,5 +1,5 @@
 #!/bin/bash
-export BIGDATAHOME=/Users/qw/Develop
+export BIGDATAHOME=/Users/wei/Develop
 
 if [[ -d "$BIGDATAHOME/hadoop" ]]; then
   export HADOOP_CLASSPATH=$BIGDATAHOME/hadoop
