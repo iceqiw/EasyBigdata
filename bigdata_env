@@ -11,8 +11,8 @@ if [[ -d "$BIGDATAHOME/hive" ]]; then
 fi
 
 if [[ -d "$BIGDATAHOME/tez" ]]; then
-  export TEZ_CONF_DIR=$BIGDATA_CONF/tez
   export TEZ_JARS=$BIGDATAHOME/tez
+  export TEZ_CONF_DIR=$TEZ_JARS/conf
   export HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}/*:${TEZ_JARS}/lib/*
 fi
 
