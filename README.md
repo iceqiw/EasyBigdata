@@ -26,7 +26,9 @@ Kafka: Kafka.md
 
 - 进入安装 Hadoop目录，删除目录hadoop/etc/hadoop，并创建软连接 
 
-  `ln -s  $工作目录/EasyBigdata/etc/hadoop-default hadoop`
+  ```
+  ln -s  $工作目录/EasyBigdata/etc/hadoop-default hadoop
+  ```
 
 - 激活配置 :bigdata_env 文件
 
