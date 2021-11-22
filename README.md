@@ -1,4 +1,4 @@
-## 修改环境变量
+## 修改bigdata_env 文件
 
 ```
 export BIGDATAHOME=/opt/bigdata 为软件安装目录
@@ -18,12 +18,21 @@ Kafka: Kafka.md
 
 ## 建立配置链接
 
-- 进入安装 Hadoop目录，替换 目录hadoop-3.2.2/etc/hadoop 
+- 进入$BIGDATAHOME，建立Hadoop 软连接
+
+  ```
+  ln -s hadoop-3.2.2 hadoop
+  ```
+
+- 进入安装 Hadoop目录，删除目录hadoop/etc/hadoop，并创建软连接 
+
+  `ln -s  $工作目录/EasyBigdata/etc/hadoop-default hadoop`
+
+- 激活配置 :bigdata_env 文件
+
+  ```
+  source bigdata_env
+  ```
 
   
 
-`ln -s  $工作目录/EasyBigdata/etc/hadoop-default hadoop`
-
-```shell
- hadoop -> /Users/qw/Workspace/EasyBigdata/etc/hadoop-default
-```
