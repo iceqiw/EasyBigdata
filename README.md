@@ -31,7 +31,7 @@ Kafka: Kafka.md
   ln -s  $工作目录/EasyBigdata/etc/hadoop-default hadoop
   ```
 
-- 激活配置 :bigdata_env 文件
+- 激活配置 bigdata_env 文件
   example:
   ```
   source bigdata_env
