@@ -1,5 +1,9 @@
 #!/bin/bash
-export BIGDATAHOME=/Users/wei/Develop
+
+
+export BIGDATAHOME=$(cd "$(dirname $0)";pwd)
+
+echo $BIGDATAHOME
 
 if [[ -d "$BIGDATAHOME/hadoop" ]]; then
   export HADOOP_CLASSPATH=$BIGDATAHOME/hadoop

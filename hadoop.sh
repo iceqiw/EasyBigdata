@@ -7,9 +7,14 @@ function start(){
   yarn --daemon start proxyserver
 }
 
+case $1 in
+  all)
+    echo "start hadoop"
+    start
+    echo "start hadoop finish"
+    ;;
+  *)
+    echo "error input"
+    ;;
+esac
 
-echo "start hadoop"
-
-start
-
-echo "start hadoop finish"
