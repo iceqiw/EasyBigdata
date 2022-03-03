@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-export BIGDATAHOME=$(cd "$(dirname '$BASH_SOURCE')";pwd)
+export BIGDATAHOME=$(cd `dirname "$BASH_SOURCE"`;pwd)
 
 echo $BIGDATAHOME
 
