@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if[[ $BIGDATAHOME ]];then
+if [[ $BIGDATAHOME ]]; then
   echo "exist bigdata home is : $BIGDATAHOME"
 else
   export BIGDATAHOME=$(cd `dirname "$BASH_SOURCE"`;pwd)
