@@ -1,4 +1,4 @@
-## 修改bigdata_env 文件
+## 定义工作目录
 
 ```
 export BIGDATAHOME=/opt/bigdata 为软件安装目录
