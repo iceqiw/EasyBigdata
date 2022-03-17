@@ -25,6 +25,7 @@ case $1 in
     echo "stop job"
     stop
     echo "stop job finished"
+    ;;
   *)
     echo "error input"
     ;;
