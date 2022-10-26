@@ -24,9 +24,9 @@ case $cmd in
     echo "start hadoop finished"
     ;;
   stop)
-    echo "stop job"
+    echo "stop cluster"
     stop
-    echo "stop job finished"
+    echo "stop cluster finished"
     ;;
   *)
     echo "error input"
