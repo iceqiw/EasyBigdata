@@ -1,4 +1,4 @@
-## 部署节点,添加host
+## 部署节点,添加host(如果只有一个节点，只添加第一列)
 
 |       hadoop-master1       | hadoop-slave1 | hadoop-slave2 |
 |:--------------------------:|:-------------:|:-------------:|
@@ -172,5 +172,5 @@ hadoop --config etc/hadoop-security  fs -ls /tmp
 
 ## Test
 
-` yarn --config etc/hadoop-cli jar hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.3.jar pi 10 10`
+` yarn --config etc/hadoop-cli jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.x.x.jar pi 10 10`
 

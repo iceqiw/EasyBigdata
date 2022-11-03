@@ -1,7 +1,7 @@
 ## 定义工作目录
 
 ```
-export BIGDATAHOME=/opt/bigdata 为软件安装目录
+export BIGDATAHOME=/path/bigdata 为软件安装目录
 ```
 
 ## 修改配置
@@ -11,7 +11,7 @@ export BIGDATAHOME=/opt/bigdata 为软件安装目录
 - 进入$BIGDATAHOME，建立Hadoop 软连接
 
   ```
-  ln -s hadoop-3.2.2 hadoop
+  ln -s hadoop-3.x.x hadoop
   ```
   
 - 进入安装 Hadoop 目录，删除目录hadoop/etc/hadoop，并创建软连接 
