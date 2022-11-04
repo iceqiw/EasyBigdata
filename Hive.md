@@ -1,10 +1,17 @@
 ## mark
 
+- hive on hadoop 3 feature :https://mathsigit.github.io/blog_page/2017/11/16/hole-of-submitting-mr-of-hadoop300RC0/
 
-- hive on hadoop 3 feature :https://mathsigit.github.io/blog_page/2017/11/16/hole-of-submitting-mr-of-hadoop300RC0/ 
+```aidl
 
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens=java.base/jdk.internal.loader=ALL-UNNAMED"
+
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens=jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED"
+
+```
 
 ## 部署节点
+
 依赖于hadoop 服务
 
 |       hadoop-master1       | hadoop-slave1 | hadoop-slave2 |
@@ -13,6 +20,25 @@
 | resoursemanager,nodemanger |  nodemanger   |  nodemanger   |
 |   hiveserver2,metastore    |               |               |
 
+## install db
+
+```
+docker pull postgres:14.2
+
+
+docker run --name postgres \
+    --restart=always \
+    -e POSTGRES_USER=hive \
+    -e POSTGRES_PASSWORD=123456 \
+    -p 5432:5432 \
+    -v /opt/bigdata/data/postgresql:/var/lib/postgresql/data \
+    -d postgres:14.2 
+    
+    CREATE USER hive WITH PASSWORD '123456';
+    CREATE DATABASE metastore OWNER hive;
+    GRANT ALL PRIVILEGES ON DATABASE metastore to hive;
+
+```
 
 ## 初始化 hive
 
@@ -25,7 +51,9 @@ hadoop fs -chown hive:hive /user/hive/warehouse
 # 2.初始化metastore
 schematool -dbType derby -initSchema
 ```
+
 ## 启动hive
+
 ```
 # 3 启动hive metastore
 nohup hive --service metastore &
@@ -34,7 +62,7 @@ nohup hive --service metastore &
 nohup hiveserver2 &
 ```
 
-## Hive 
+## Hive
 
 `hive --hiveconf log4j.configurationFile=/opt/bigdata/etc/hive/hive-log4j.properties`
 
@@ -61,6 +89,7 @@ LOAD DATA INPATH '/tmp/test.txt' INTO TABLE test;
 ```
 
 2/ 分区关键字 PARTITIONED BY
+
 ```sql
 create table t_4(ip string,url string,staylong int)
 partitioned by (day string)
@@ -69,8 +98,8 @@ fields terminated by ',';
 
 ```
 
-
 导入数据到不同的分区目录：
+
 ```bash
 load data local inpath '/root/weblog.1' into table t_4 partition(day='2017-04-08');
 load data local inpath '/root/weblog.2' into table t_4 partition(day='2017-04-09');
