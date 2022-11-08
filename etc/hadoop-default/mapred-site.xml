@@ -33,13 +33,4 @@
         <value>hadoop-master1:19888</value>
         <description>MapReduce JobHistory Server Web UI host:port</description>
     </property>
-    <property>
-        <name>mapreduce.jobhistory.done-dir</name>
-        <value>/job/history/done</value>
-    </property>
-    <property>
-        <name>mapreduce.jobhistory.intermediate-done-dir</name>
-        <value>/job/history/done_intermediate</value>
-    </property>
-
 </configuration>

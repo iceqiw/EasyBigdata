@@ -39,6 +39,18 @@ yarn --daemon start resourcemanager
 hdfs --daemon start datanode
 yarn --daemon start nodemanager
 ```
+## 修改代理用户core-site.xml
+```
+    <property>
+        <name>hadoop.proxyuser.xxx.hosts</name>
+        <value>*</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.xxx.groups</name>
+        <value>*</value>
+    </property>
+
+```
 
 ## HA 配置
 

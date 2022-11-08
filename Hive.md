@@ -2,14 +2,6 @@
 
 - hive on hadoop 3 feature :https://mathsigit.github.io/blog_page/2017/11/16/hole-of-submitting-mr-of-hadoop300RC0/
 
-```aidl
-
-JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens=java.base/jdk.internal.loader=ALL-UNNAMED"
-
-JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens=jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED"
-
-```
-
 ## 部署节点
 
 依赖于hadoop 服务
@@ -44,9 +36,11 @@ docker run --name postgres \
 
 ```
 # 1.初始化hive warehouse目录
-hadoop fs -mkdir -p /user/hive/warehouse
-hadoop fs -chown hive:hive /user/hive
-hadoop fs -chown hive:hive /user/hive/warehouse
+hdfs dfs -mkdir -p /user/hive/warehouse
+hdfs dfs -chown hive:hive /user/hive
+hdfs dfs -chown hive:hive /user/hive/warehouse
+hdfs dfs -mkdir -p /tmp
+hdfs dfs -chmod -R 777 /tmp
 
 # 2.初始化metastore
 schematool -dbType derby -initSchema

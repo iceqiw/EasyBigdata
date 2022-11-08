@@ -3,6 +3,13 @@
 ```
 export BIGDATAHOME=/path/bigdata 为软件安装目录
 ```
+OR
+
+Add below on head of bigdata_env
+
+```
+export BIGDATAHOME=/path/bigdata 为软件安装目录
+```
 
 ## 修改配置
 
