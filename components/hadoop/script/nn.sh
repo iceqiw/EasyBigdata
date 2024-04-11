@@ -6,6 +6,8 @@ function start(){
   hdfs --daemon start namenode
   echo "start rm"
   yarn --daemon start resourcemanager
+  echo "start proxy"
+  yarn --daemon start proxyserver
 }
 
 
