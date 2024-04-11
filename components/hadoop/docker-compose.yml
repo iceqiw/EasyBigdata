@@ -1,4 +1,3 @@
-version: '3'
 services:
   master01:
     image: base-data:1.0
