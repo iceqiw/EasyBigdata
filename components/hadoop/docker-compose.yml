@@ -21,13 +21,12 @@ services:
     ports:
       - "50070:50070"
       - "8088:8088"
-    entrypoint: ["bash","/opt/bigdata/script/nn.sh"]
+      - "18088:18088"
 
   slave01:
     extends:
       service: _hadoop
     hostname: slave01
-    entrypoint: ["bash","/opt/bigdata/script/dn.sh"]
 
 
 networks:

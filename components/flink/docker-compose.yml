@@ -4,8 +4,7 @@ services:
     volumes:
       - ./hadoop:/opt/bigdata/hadoop
       - ./etc/hadoop-cli:/opt/bigdata/etc/hadoop
-    env_file:
-      - .env
+      - ./script:/opt/bigdata/script
   flink01:
     extends:
       service: _hadoop
