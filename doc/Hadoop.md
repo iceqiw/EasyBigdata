@@ -1,51 +1,7 @@
-# 单节点部署模式
-
-## 1. 部署节点
-
-|        bd-master-1
-| :------------------------: 
-|     namenode,datanode
-| resoursemanager,nodemanger
-
-## 2. docker-compose-hadoop.yml 配置
-
-```yaml
-version: '3'
-services:
-  bd-master:
-    image: bigdata:1.0
-    build:
-      context: .
-      dockerfile: $PWD/docker/hd-env/Dockerfile
-    hostname: bd-master-1
-    ports:
-      - 8088:8088
-      - 8042:8042
-      - 50070:50070
-    volumes:
-      - $PWD/conf/bigdata.sh:/etc/profile.d/bigdata.sh
-      - $PWD/installPkg/hadoop:/opt/bigdata/hadoop
-      - $PWD/etc/hadoop:/opt/bigdata/etc/hadoop
-      - $PWD/script:/opt/bigdata/script
-      - $PWD/exData:/opt/bigdata/exData
-```
-
-## 3. deploy流程：
-
-1.格式化 namenode
-```shell
-init_hdfs
-```
-
-2.启动集群
-```shell
-op_start_all
-```
-
-3.验证启动
+# 验证启动
   访问 http://localhost:50070
 
-## 4. hadoop 启动命令
+## hadoop 启动命令
 
 ```shell
 hdfs namenode -format #格式化 namenode
@@ -58,28 +14,6 @@ yarn --daemon start resourcemanager #启动 resourcemanager
 
 yarn --daemon start nodemanager #启动 nodemanager
 ```
-
-# 多节点部署模式
-
-## 部署节点
-
-|        bd-master-1         | hadoop-slave1 | hadoop-slave2 |
-| :------------------------: | :-----------: | :-----------: |
-|     namenode,datanode      |   datanode    |   datanode    |
-| resoursemanager,nodemanger |  nodemanger   |  nodemanger   |
-
-## hadoop 启动命令
-
-`hdfs namenode -format` 格式化 namenode
-
-`hdfs --daemon start namenode` 启动 namenode
-
-`hdfs --daemon start datanode` 启动 datanode
-
-`yarn --daemon start resourcemanager` 启动 resourcemanager
-
-`yarn --daemon start nodemanager` 启动 nodemanager
-
 ## 流程：
 
 1.格式化 namenode
@@ -103,7 +37,7 @@ yarn --daemon start resourcemanager
 hdfs --daemon start datanode
 yarn --daemon start nodemanager
 ```
-
+# waiting for update
 ## HA 配置
 
 **添加 hosts ip hadoop-master2**
