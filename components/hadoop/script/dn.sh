@@ -7,4 +7,3 @@ function start(){
 }
 
 start
-sleep infinity

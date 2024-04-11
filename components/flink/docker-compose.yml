@@ -1,21 +1,23 @@
 services:
-  _base:
+  _hadoop:
     image: base-data:1.0
     volumes:
-      - ${INSTALL}/hadoop:/opt/bigdata/hadoop
-      - ${INSTALL}/flink:/opt/bigdata/flink
+      - ./hadoop:/opt/bigdata/hadoop
       - ./etc/hadoop-cli:/opt/bigdata/etc/hadoop
-      - ./etc/flink:/opt/bigdata/etc/flink
-      - ./script:/opt/bigdata/script
+    env_file:
+      - .env
   flink01:
     extends:
-      service: _base
+      service: _hadoop
     working_dir: /opt/bigdata
     hostname: flink
+    volumes:
+      - ./flink:/opt/bigdata/flink
     networks:
       - cluster_net
     env_file:
       - .env
+
 networks:
   cluster_net:
     external: true
