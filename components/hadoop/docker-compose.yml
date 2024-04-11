@@ -1,37 +1,34 @@
 services:
-  master01:
+  _hadoop:
     image: base-data:1.0
     build:
       context: .
       dockerfile: Dockerfile-ubuntu-jdk11
     working_dir: /opt/bigdata
-    hostname: master01
     volumes:
       - ./install:/opt/bigdata/hadoop
       - ./etc/hadoop-default:/opt/bigdata/etc/hadoop
       - ./script:/opt/bigdata/script
     networks:
       - cluster_net
+    env_file:
+      - .env
+
+  master01:
+    extends:
+      service: _hadoop
+    hostname: master01
     ports:
       - "50070:50070"
       - "8088:8088"
-    env_file:
-      - .env
-        #entrypoint: ["bash","/opt/bigdata/script/nn.sh"]
+    entrypoint: ["bash","/opt/bigdata/script/nn.sh"]
+
   slave01:
-    image: base-data:1.0
-    build:
-      context: .
-      dockerfile: Dockerfile-ubuntu-jdk11
-    working_dir: /opt/bigdata
+    extends:
+      service: _hadoop
     hostname: slave01
-    volumes:
-      - ./install:/opt/bigdata/hadoop
-      - ./etc/hadoop-default:/opt/bigdata/etc/hadoop
-    networks:
-      - cluster_net
-    env_file:
-      - .env
+    entrypoint: ["bash","/opt/bigdata/script/dn.sh"]
+
 
 networks:
   cluster_net:
