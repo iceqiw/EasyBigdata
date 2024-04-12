@@ -12,6 +12,7 @@ services:
     hostname: flink
     volumes:
       - ./flink:/opt/bigdata/flink
+      - ./etc/flink:/opt/bigdata/etc/flink
     networks:
       - cluster_net
     env_file:
