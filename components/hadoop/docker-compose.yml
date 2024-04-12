@@ -22,12 +22,13 @@ services:
       - "50070:50070"
       - "8088:8088"
       - "18088:18088"
+    command: ["bash","./script/nn.sh"]
 
   slave01:
     extends:
       service: _hadoop
-    hostname: slave01
-
+    tty: true
+    command: ["bash","./script/dn.sh"]
 
 networks:
   cluster_net:
