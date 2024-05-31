@@ -2,22 +2,18 @@ services:
   _base:
     image: base-data:1.0
     volumes:
-      - ./hadoop:/opt/bigdata/install
-      - ./etc/hadoop-cli:/opt/bigdata/etc/hadoop
+      - ${INSTALL}/hbase:/opt/bigdata/hbase
+      - ./etc/hbase:/opt/bigdata/etc/hbase
       - ./script:/opt/bigdata/script
-  flink01:
+  hmaster:
     extends:
       service: _base
     working_dir: /opt/bigdata
-    hostname: flink
-    volumes:
-      - ./flink:/opt/bigdata/flink
-      - ./etc/flink:/opt/bigdata/etc/flink
+    hostname: hmaster
     networks:
       - cluster_net
     env_file:
       - .env
-
 networks:
   cluster_net:
     external: true

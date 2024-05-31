@@ -24,4 +24,6 @@ hbase-daemon.sh start master
 #2 start regionserver (all node)
 hbase-daemon.sh start regionserver
 
+hbase-daemon.sh start zookeeper
 ```
+

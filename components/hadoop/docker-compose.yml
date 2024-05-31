@@ -9,7 +9,6 @@ services:
       - cluster_net
     env_file:
       - .env
-
   master01:
     extends:
       service: _base
@@ -20,14 +19,12 @@ services:
       - "8088:8088"
       - "18088:18088"
     command: ["bash","./script/nn.sh"]
-
   slave01:
     working_dir: /opt/bigdata
     extends:
       service: _base
     tty: true
     command: ["bash","./script/dn.sh"]
-
 networks:
   cluster_net:
     external: true
