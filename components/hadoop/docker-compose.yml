@@ -1,12 +1,8 @@
 services:
-  _hadoop:
+  _base:
     image: base-data:1.0
-    build:
-      context: .
-      dockerfile: Dockerfile-ubuntu-jdk11
-    working_dir: /opt/bigdata
     volumes:
-      - ./install:/opt/bigdata/hadoop
+      - ./hadoop:/opt/bigdata/hadoop
       - ./etc/hadoop-default:/opt/bigdata/etc/hadoop
       - ./script:/opt/bigdata/script
     networks:
@@ -16,8 +12,9 @@ services:
 
   master01:
     extends:
-      service: _hadoop
+      service: _base
     hostname: master01
+    working_dir: /opt/bigdata
     ports:
       - "50070:50070"
       - "8088:8088"
@@ -25,8 +22,9 @@ services:
     command: ["bash","./script/nn.sh"]
 
   slave01:
+    working_dir: /opt/bigdata
     extends:
-      service: _hadoop
+      service: _base
     tty: true
     command: ["bash","./script/dn.sh"]
 
