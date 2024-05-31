@@ -1,5 +1,5 @@
 services:
-  _hadoop:
+  _base:
     image: base-data:1.0
     volumes:
       - ./hadoop:/opt/bigdata/hadoop
@@ -7,7 +7,7 @@ services:
       - ./script:/opt/bigdata/script
   flink01:
     extends:
-      service: _hadoop
+      service: _base
     working_dir: /opt/bigdata
     hostname: flink
     volumes:

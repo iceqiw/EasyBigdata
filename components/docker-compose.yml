@@ -1,0 +1,6 @@
+services:
+  _hadoop:
+    image: base-data:1.0
+    build:
+      context: .
+      dockerfile: Dockerfile-ubuntu-jdk11

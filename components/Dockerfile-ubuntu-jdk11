@@ -37,8 +37,6 @@ RUN export DEBIAN_FRONTEND=noninteractive \
   make \
   maven \
   net-tools \
-  python3-distutils \
-  python3-requests \
   unzip \
   wget
 
@@ -48,7 +46,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
 && rm -rf /var/lib/apt/lists/*
 
 ARG USERNAME=ice
-ARG USER_UID=1000
+ARG USER_UID=2000
 ARG USER_GID=$USER_UID
 
 # Create the user
