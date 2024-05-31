@@ -2,7 +2,7 @@ services:
   _base:
     image: base-data:1.0
     volumes:
-      - ./hadoop:/opt/bigdata/hadoop
+      - ${INSTALL}/hadoop:/opt/bigdata/hadoop
       - ./etc/hadoop-default:/opt/bigdata/etc/hadoop
       - ./script:/opt/bigdata/script
     networks:

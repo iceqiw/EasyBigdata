@@ -2,10 +2,7 @@
 ```
 .
 ├── docker-compose.yml
-├── Dockerfile-ubuntu-jdk11
 ├── etc
-├── flink -> /home/weiqi/dev/flink-1.14.6
-├── hadoop -> /home/weiqi/dev/hadoop-3.3.4
 ├── README.md
 └── script
 ```
@@ -21,7 +18,7 @@ flink run-application -t yarn-application ./flink/examples/streaming/TopSpeedWin
 
 
 ## Start YARN Session
-``` shell 
+``` shell
 yarn-session.sh --detached
 ```
 

@@ -11,3 +11,8 @@ docker network create --driver bridge cluster_net
 docker compose build
 ```
 
+## Set install package dir
+
+```
+export INSTALL=~/workspace/EasyBigdata/install
+```
