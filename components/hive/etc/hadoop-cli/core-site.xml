@@ -1,0 +1,18 @@
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://master01:9000</value>
+    </property>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/opt/bigdata/data/hadoop/tmp</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.ice.hosts</name>
+        <value>*</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.ice.groups</name>
+        <value>*</value>
+    </property>
+</configuration>
