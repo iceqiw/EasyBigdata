@@ -9,7 +9,7 @@ services:
       - ./script:/opt/bigdata/script
   flink01:
     extends:
-      service: _hadoop
+      service: _base
     working_dir: /opt/bigdata
     hostname: flink
     networks:
