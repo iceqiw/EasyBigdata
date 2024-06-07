@@ -1,0 +1,22 @@
+services:
+  _base:
+    image: base-data:1.0
+    volumes:
+      - ${INSTALL}/zookeeper:/opt/bigdata/zookeeper
+      - ./etc/default:/opt/bigdata/etc/zookeeper
+      - ./script:/opt/bigdata/script
+  zk01:
+    extends:
+      service: _base
+    working_dir: /opt/bigdata
+    hostname: zk01
+    networks:
+      - cluster_net
+    ports:
+      - "2181:2181"
+    env_file:
+      - .env
+    command: ["bash","./script/start.sh"]
+networks:
+  cluster_net:
+    external: true

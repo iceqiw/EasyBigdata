@@ -1,0 +1,21 @@
+services:
+  _base:
+    image: base-data:1.0
+    volumes:
+      - ${INSTALL}/hive:/opt/bigdata/hive
+      - ${INSTALL}/hadoop:/opt/bigdata/hadoop
+      - ./etc/hive-default:/opt/bigdata/etc/hive
+      - ./etc/hadoop-cli:/opt/bigdata/etc/hadoop
+      - ./script:/opt/bigdata/script
+  hive01:
+    extends:
+      service: _base
+    working_dir: /opt/bigdata
+    hostname: hive01
+    networks:
+      - cluster_net
+    env_file:
+      - .env
+networks:
+  cluster_net:
+    external: true
