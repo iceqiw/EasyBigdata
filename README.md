@@ -1,4 +1,8 @@
 # Easy Install Components of Bigdata
+
+link the install package as blow command
+
+`ln -s <component-path> <component-name> `
 ## [Components](./components/README.md)
 Init the Docker environment
 ### [Hadoop](./components/hadoop/README.md)
