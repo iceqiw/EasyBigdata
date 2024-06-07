@@ -16,6 +16,7 @@ services:
       - "2181:2181"
     env_file:
       - .env
+    command: ["bash","./script/start.sh"]
 networks:
   cluster_net:
     external: true
