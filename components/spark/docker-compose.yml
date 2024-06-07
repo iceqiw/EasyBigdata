@@ -1,0 +1,21 @@
+services:
+  _base:
+    image: base-data:1.0
+    volumes:
+      - ${INSTALL}/hadoop:/opt/bigdata/hadoop
+      - ${INSTALL}/spark:/opt/bigdata/spark
+      - ./etc/hadoop-cli:/opt/bigdata/etc/hadoop
+      - ./etc/spark-default:/opt/bigdata/etc/spark
+      - ./script:/opt/bigdata/script
+  spark01:
+    extends:
+      service: _base
+    working_dir: /opt/bigdata
+    hostname: spark01
+    networks:
+      - cluster_net
+    env_file:
+      - .env
+networks:
+  cluster_net:
+    external: true

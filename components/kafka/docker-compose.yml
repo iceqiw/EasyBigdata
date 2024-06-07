@@ -1,0 +1,21 @@
+services:
+  _base:
+    image: base-data:1.0
+    volumes:
+      - ${INSTALL}/kafka:/opt/bigdata/kafka
+      - ./etc/kafka:/opt/bigdata/etc/kafka
+      - ./script:/opt/bigdata/script
+  broker01:
+    extends:
+      service: _base
+    working_dir: /opt/bigdata
+    hostname: broker01
+    networks:
+      - cluster_net
+    env_file:
+      - .env
+    ports:
+      - "9092:9092"
+networks:
+  cluster_net:
+    external: true
