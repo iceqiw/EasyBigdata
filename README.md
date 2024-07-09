@@ -13,6 +13,9 @@ Setup hive service
 ### [Hbase](./components/hbase/README.md)
 Setup Hbase cluster
 
-### [Zookeeper](./components/zookeeper/README.md)
-### [Kafka](./components/kafka/README.md)
-### [Spark](./components/spark/README.md)
+### [Zookeeper](./components/zookeeper/README.md) 
+Setup ZK cluster
+### [Kafka](./components/kafka/README.md) 
+Setup Kafka
+### [Spark](./components/spark/README.md) 
+Setup Spark
