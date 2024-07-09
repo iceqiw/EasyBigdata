@@ -1,0 +1,1 @@
+export HADOOP_CLASSPATH=`hadoop classpath`
