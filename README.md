@@ -19,3 +19,5 @@ Setup ZK cluster
 Setup Kafka
 ### [Spark](./components/spark/README.md) 
 Setup Spark
+
+## Local mode refer to the branch : [local](https://github.com/iceqiw/EasyBigdata/tree/local) 
